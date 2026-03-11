@@ -1,331 +1,433 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Glassmorphism Header Portfolio</title>
-  <link rel="stylesheet" href="design.css">
-  <!-- BOOTSTRAP 5 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&display=swap" rel="stylesheet">
+	  <meta charset="UTF-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	  <title>Em-jay Nerizon | Portfolio</title>
+	  <!-- BOOTSTRAP 5 -->
+	  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+	  <link rel="stylesheet" href="design.css">
 
-
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
-
   <!-- NAVBAR -->
-  <nav class="navbar navbar-expand-lg fixed-top glass navbar-dark px-md-5">
+  <nav class="navbar navbar-expand-lg fixed-top glass app-navbar px-md-5">
     <div class="container-fluid">
-      <div class="navbar-brand">
-        <div class="d-flex gap-2">
-          <div>
-
-            <img src="profile.png " class="rounded-circle   shadow-md" alt="Logo" width="40" height="40"
-              class="d-inline-block align-text-top">
-          </div>
-
-
-          <div class="fs-6 fw-medium">
-
-          
-           Em-jay Acosta Nerizon <br>
-            <div style="font-size:16px;font-weight:400; margin-top:-5px;">
-
-              Web Developer
-            </div>
-
-          </div>
-
+      <a class="navbar-brand d-flex align-items-center gap-2" href="#top">
+        <img src="profile.png" class="rounded-circle" alt="Profile photo" width="40" height="40">
+        <div>
+          <div class="brand-name">Em-jay Acosta Nerizon</div>
+          <div class="brand-role">Web Developer</div>
         </div>
+      </a>
 
-      </div>
-
-      <!-- MOBILE TOGGLER -->
       <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
         aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <!-- NAV LINKS -->
       <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-        <ul class="navbar-nav">
-          <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <ul class="navbar-nav align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#top">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#achievements">Achievements</a></li>
           <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
           <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
           <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item ms-lg-2">
+            <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle theme">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 18a6 6 0 1 0 0-12 6 6 0 0 0 0 12Z" stroke="currentColor" stroke-width="2" />
+                <path
+                  d="M12 2v2M12 20v2M4 12H2M22 12h-2M5 5l1.4 1.4M17.6 17.6 19 19M19 5l-1.4 1.4M6.4 17.6 5 19"
+                  stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+              </svg>
+              <span data-theme-label>Light</span>
+            </button>
+          </li>
         </ul>
       </div>
     </div>
   </nav>
 
-
-  <!-- HERO SECTION -->
-  <section class="hero">
-
-    <div class="hero-content container-fluid w-75  ">
-      <div class="row align-items-center  ">
-
-        <!-- LEFT SIDE TEXT -->
-        <div class="col-md-7 text-start  d-flex flex-column justify-content-center text-left ">
-          <div class="text-dark text-left fs-1  hero-title">Crafting Experiences.</div>
-          <div class=" fs-1 text-primary hero-title">Building the Web.</div>
-          <!-- <h1 style="font-size: 80px;">EMJAY NERIZON</h1 -->
-          <br>
-          <div class="fs-5">Hi, I'm Em-jay Nerizon, an aspiring <b> Web Developer</b> from Pangasinan State University,
-            specializing in PHP, Laravel, and JavaScript.
-            I build information systems that enhance user experience and optimize business processes.
+  <!-- HERO -->
+  <section class="hero" id="top">
+    <div class="container-fluid px-4 px-md-5">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7 reveal">
+          <div class="hero-kicker mb-2">Portfolio</div>
+          <h1 class="hero-title display-4 mb-3">
+            Crafting experiences. <span class="text-gradient">Building the web.</span>
+          </h1>
+          <p class="hero-lead mb-4">
+            Hi, I'm Em-jay Nerizon, an aspiring web developer from Pangasinan State University specializing in PHP,
+            Laravel, and JavaScript. I build information systems that improve user experience and optimize business
+            processes.
+          </p>
+          <div class="hero-actions d-flex flex-wrap gap-2">
+            <a class="btn btn-primary" href="#projects">View projects</a>
+            <a class="btn btn-outline-secondary" href="#contact">Contact me</a>
           </div>
         </div>
 
-        <!-- RIGHT SIDE IMAGE -->
-        <div class="col-md-5 d-flex justify-content-center align-items-center text-center mt-4 mt-md-0">
+        <div class="col-lg-5 d-flex justify-content-center reveal">
           <div class="profile-wrapper">
             <img src="profile.png" alt="Em-jay Nerizon" class="profile-image">
           </div>
         </div>
-
       </div>
     </div>
-
   </section>
 
-
-  <!-- ABOUT ME SECTION -->
-  <!-- <section id="about" class="  about-section  py-5 d-flex align-items-center" style="height: 100vh;">
-    <div class="container">
-      <div class="row align-items-center">
- 
-        <div class="col-md-5 text-center mb-4 mb-md-0">
-          <div class="about-image glass p-3 rounded-4 d-inline-block">
-            <div class="image-stack">
-              <img src="profile.png" alt="Profile" />
-            </div>
-
-          </div>
-
+  <!-- ABOUT -->
+  <section class="container-fluid px-4 px-md-5 py-4">
+    <div class="row g-4">
+      <div class="col-lg-7 reveal">
+        <div class="card-surface p-4">
+          <h2 class="section-title h3 mb-2">About</h2>
+          <p class="section-subtitle mb-0">
+            I enjoy building clean, interactive, and user-friendly web experiences—combining functionality with
+            thoughtful design.
+          </p>
         </div>
- 
-        <div class="col-md-7 text-dark">
-          <h2 class="fw-bold mb-3 text-gradient">&lt;About Me/&gt;</h2>
-          <p class="lead">
-            Hello! I'm <strong>Emjay Nerizon</strong> — a passionate web developer who loves crafting
-            clean, interactive, and user-friendly web experiences. My goal is to combine functionality
-            with creativity to bring ideas to life through code and design.
-          </p>
-          <p>
-            With a background in front-end and back-end development, I focus on responsive,
-            accessible, and aesthetic digital solutions. I’m always exploring new technologies and
-            refining my skills to keep up with the fast-paced tech world.
-          </p>
-          <a href="#projects" class="btn btn-outline-light px-4 mt-3 rounded-pill">View My Work</a>
+      </div>
+      <div class="col-lg-5 reveal">
+        <div class="card-surface p-4">
+          <div class="d-flex flex-column gap-2">
+            <div><span class="text-muted">Focus:</span> Laravel, JavaScript, UI</div>
+            <div><span class="text-muted">Based in:</span> Pangasinan, PH</div>
+            <div><span class="text-muted">Goal:</span> Build real-world systems</div>
+          </div>
         </div>
       </div>
     </div>
-  </section> -->
-  <section id="education" class="container    ">
-    <h2 class="h3 fw-bold mb-4 text-center text-md-start">Education</h2>
+  </section>
 
-    <!-- College -->
-    <div class="row align-items-center mb-5">
+  <!-- EDUCATION -->
+  <section id="education" class="container-fluid px-4 px-md-5 py-5">
+    <div class="text-center text-md-start mb-4 reveal">
+      <h2 class="section-title h3 mb-1">Education</h2>
+      <div class="section-subtitle">Where I learned and grew</div>
+    </div>
+
+    <div class="row align-items-center mb-4 g-3 reveal">
       <div class="col-md-3 text-center mb-3 mb-md-0">
-        <img src="./images/psu-logo.png" alt="Pangasinan State University Logo" class="img-fluid rounded-circle"
+        <img src="./images/psu-logo.png" alt="Pangasinan State University logo" class="img-fluid rounded-circle bg-white"
           style="max-width: 150px;">
       </div>
       <div class="col-md-9">
-        <div class="bg-white p-4 rounded shadow-sm">
+        <div class="card-surface hover-lift p-4">
           <h3 class="fw-semibold h5 mb-1">Pangasinan State University — San Carlos Campus</h3>
-          <p class="text-muted mb-3">Bachelor of Science in Information Technology Major in Web and Mobile Technology
-            (2022-2026)</p>
-          <p class="text-secondary">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odit aspernatur soluta deleniti molestiae itaque
-            explicabo assumenda, modi obcaecati voluptates corporis vitae debitis in? Nemo inventore repellat omnis
-            voluptatem cumque soluta!
+          <p class="text-muted mb-3">
+            Bachelor of Science in Information Technology (Web & Mobile Technology) (2022–2026)
+          </p>
+          <p class="text-muted mb-0">
+            Add a short description of your program, relevant coursework, and any honors.
           </p>
         </div>
       </div>
     </div>
 
-    <!-- Senior High -->
-    <div class="row align-items-center mb-5">
+    <div class="row align-items-center mb-4 g-3 reveal">
       <div class="col-md-3 text-center mb-3 mb-md-0">
-        <img src="./images/lilimasan-high-school-logo.png" alt="Lilimasan National High School Logo"
-          class="img-fluid rounded-circle" style="max-width: 150px;">
+        <img src="./images/lilimasan-high-school-logo.png" alt="Lilimasan National High School logo"
+          class="img-fluid rounded-circle bg-white" style="max-width: 150px;">
       </div>
       <div class="col-md-9">
-        <div class="bg-white p-4 rounded shadow-sm">
+        <div class="card-surface hover-lift p-4">
           <h3 class="fw-semibold h5 mb-1">Lilimasan National High School — Senior High</h3>
-          <p class="text-muted mb-3">General Academic Strand (2020-2022)</p>
-          <p class="text-secondary">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Accusamus esse iusto fuga vel labore id animi.
-            Odio, consectetur quod laboriosam perferendis sapiente, veritatis aliquam vero dolorem distinctio error
-            nihil tempore?</p>
+          <p class="text-muted mb-3">General Academic Strand (2020–2022)</p>
+          <p class="text-muted mb-0">Add a short highlight (orgs, awards, leadership).</p>
         </div>
       </div>
     </div>
 
-    <!-- Junior High -->
-    <div class="row align-items-center mb-5">
+    <div class="row align-items-center mb-4 g-3 reveal">
       <div class="col-md-3 text-center mb-3 mb-md-0">
-        <img src="./images/lilimasan-high-school-logo.png" alt="Lilimasan National High School Logo"
-          class="img-fluid rounded" style="max-width: 150px;">
+        <img src="./images/lilimasan-high-school-logo.png" alt="Lilimasan National High School logo"
+          class="img-fluid rounded-circle bg-white" style="max-width: 150px;">
       </div>
       <div class="col-md-9">
-        <div class="bg-white p-4 rounded shadow-sm">
+        <div class="card-surface hover-lift p-4">
           <h3 class="fw-semibold h5 mb-1">Lilimasan National High School — Junior High</h3>
-          <p class="text-muted mb-3">2016 – 2020</p>
-          <p class="text-secondary">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat sapiente aliquam vel, rerum similique dicta
-            ex corporis cupiditate at necessitatibus perferendis saepe, nobis autem animi vero officiis hic. Molestiae,
-            ab. </p>
+          <p class="text-muted mb-3">2016–2020</p>
+          <p class="text-muted mb-0">Add a short highlight (orgs, awards, leadership).</p>
         </div>
       </div>
     </div>
 
-    <!-- Elementary -->
-    <div class="row align-items-center">
+    <div class="row align-items-center g-3 reveal">
       <div class="col-md-3 text-center mb-3 mb-md-0">
-        <img src="./images/lilimasan-high-school-logo.png" alt="Elementary School Logo" class="img-fluid rounded"
+        <img src="./images/lilimasan-high-school-logo.png" alt="Lilimasan Elementary School logo" class="img-fluid rounded-circle bg-white object-fit-cover"
           style="max-width: 150px;">
       </div>
       <div class="col-md-9">
-        <div class="bg-white p-4 rounded shadow-sm">
+        <div class="card-surface hover-lift p-4">
           <h3 class="fw-semibold h5 mb-1">Lilimasan Elementary School</h3>
-          <p class="text-muted mb-3">2012 – 2016</p>
-          <p class="text-secondary">
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Animi placeat numquam repellendus debitis optio
-            ipsum soluta odit, laborum necessitatibus non inventore minima culpa ipsam eos fuga officiis. Beatae,
-            voluptatibus obcaecati?
-          </p>
+          <p class="text-muted mb-3">2012–2016</p>
+          <p class="text-muted mb-0">Add a short highlight (clubs, awards).</p>
         </div>
       </div>
     </div>
   </section>
-<section id="skills" class="container py-5">
-  <h2 class="text-center fw-bold mb-5">Languages & Technologies</h2>
 
-  <div class="row g-4 justify-content-center">
-
-    <!-- Skill Card -->
-    <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-      <div class="card   shadow-sm text-center p-3 skill-card h-100">
-        <img src="./images/skills/php.png" class="mx-auto mb-3" alt="PHP Logo" style="  height:60px;">
-        <h6 class="fw-semibold text-dark mb-0">PHP</h6>
-      </div>
+  <!-- ACHIEVEMENTS -->
+  <section id="achievements" class="container-fluid px-4 px-md-5 py-5">
+    <div class="text-center text-md-start mb-4 reveal">
+      <h2 class="section-title h3 mb-1">Achievements</h2>
+      <div class="section-subtitle">Add certificates, awards, and recognitions (image placeholders included)</div>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-      <div class="card   shadow-sm text-center p-3 skill-card h-100">
-        <img src="./images/skills/laravel.png" class="mx-auto mb-3" alt="Laravel Logo" style="width:60px; height:60px;">
-        <h6 class="fw-semibold text-dark mb-0">Laravel</h6>
+    <div class="row g-4">
+      <div class="col-md-4 reveal">
+        <div class="card-surface hover-lift p-4 h-100">
+          <!-- Replace the placeholder below with:
+            <img class="achievement-img" src="images/achievements/your-image.jpg" alt="Your achievement" />
+          -->
+          <div class="media-placeholder mb-3">Achievement image placeholder</div>
+          <h3 class="h6 fw-semibold mb-1">Achievement Title</h3>
+          <div class="text-muted">Short description (date, award, event, etc.)</div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal">
+        <div class="card-surface hover-lift p-4 h-100">
+          <div class="media-placeholder mb-3">Achievement image placeholder</div>
+          <h3 class="h6 fw-semibold mb-1">Achievement Title</h3>
+          <div class="text-muted">Short description (date, award, event, etc.)</div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal">
+        <div class="card-surface hover-lift p-4 h-100">
+          <div class="media-placeholder mb-3">Achievement image placeholder</div>
+          <h3 class="h6 fw-semibold mb-1">Achievement Title</h3>
+          <div class="text-muted">Short description (date, award, event, etc.)</div>
+        </div>
       </div>
     </div>
+  </section>
 
-   
-
-    <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-      <div class="card   shadow-sm text-center p-3 skill-card h-100">
-        <img src="./images/skills/javascript.png" class="mx-auto mb-3" alt="JavaScript Logo" style="width:60px; height:60px;">
-        <h6 class="fw-semibold text-dark mb-0">JavaScript</h6>
-      </div>
+  <!-- PROJECTS -->
+  <section id="projects" class="container-fluid px-4 px-md-5 py-5">
+    <div class="text-center text-md-start mb-4 reveal">
+      <h2 class="section-title h3 mb-1">Projects</h2>
+      <div class="section-subtitle">A showcase of my web development projects</div>
     </div>
 
-    <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-      <div class="card   shadow-sm text-center p-3 skill-card h-100">
-        <img src="./images/skills/html.png" class="mx-auto mb-3" alt="HTML5 Logo" style="width:60px; height:60px;">
-        <h6 class="fw-semibold text-dark mb-0">HTML5</h6>
-      </div>
-    </div>
-
-    <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-      <div class="card   shadow-sm text-center p-3 skill-card h-100">
-        <img src="./images/skills/css.svg" class="mx-auto mb-3" alt="CSS Logo" style="width:60px; height:60px;">
-        <h6 class="fw-semibold text-dark mb-0">CSS</h6>
-      </div>
-    </div>
-
-    <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-      <div class="card   shadow-sm text-center p-3 skill-card h-100">
-        <img src="./images/skills/tailwind.png" class="mx-auto mb-3" alt="Tailwind CSS Logo" style="width:60px; height:60px;">
-        <h6 class="fw-semibold text-dark mb-0">Tailwind CSS</h6>
-      </div>
-    </div>
-
-    <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-      <div class="card   shadow-sm text-center p-3 skill-card h-100">
-        <img src="./images/skills/boostrap.png" class="mx-auto mb-3" alt="Bootstrap Logo" style="width:60px; height:60px;">
-        <h6 class="fw-semibold text-dark mb-0">Bootstrap</h6>
-      </div>
-    </div>
-
-    <div class="col-6 col-sm-4 col-md-3 col-lg-3">
-      <div class="card   shadow-sm text-center p-3 skill-card h-100">
-        <img src="./images/skills/mysql.svg" class="mx-auto mb-3" alt="MySQL Logo" style="width:60px; height:60px;">
-        <h6 class="fw-semibold text-dark mb-0">MySQL</h6>
-      </div>
-    </div>
-
-    <!-- <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-      <div class="card   shadow-sm text-center p-3 skill-card h-100">
-        <img src="./images/skills/git.png" class="mx-auto mb-3" alt="Git Logo" style="width:60px; height:60px;">
-        <h6 class="fw-semibold text-dark mb-0">Git</h6>
-      </div>
-    </div>
-
-    <div class="col-6 col-sm-4 col-md-3 col-lg-2">
-      <div class="card   shadow-sm text-center p-3 skill-card h-100">
-        <img src="./images/skills/github.svg" class="mx-auto mb-3" alt="GitHub Logo" style="width:60px; height:60px;">
-        <h6 class="fw-semibold text-dark mb-0">GitHub</h6>
-      </div>
-    </div> -->
-
-    
-
-  </div>
-</section>
-
-  <section id="projects" class="projects-section py-5 d-flex align-items-center">
-    <div class="container-fluid px-5">
-      <div class="text-center mb-5">
-        <h2 class="fw-bold mb-3  text-dark">Projects</h2>
-
-        <p class="text-muted">A showcase of my web development projects</p>
-      </div>
-
-      <div class="row gap-2 w-100">
-        <!-- Project Card 1 -->
-         
-        <div class="card project-card p-2 col-md-4">
-          <div class="">
-            <img src="dcp.png" alt="Project 1" class="img-fluid  ">
-            <div class="p-2">
-              <h5>DCP Inventory Management System</h5>
-              <p  style="font-size:18px">A real-time inventory management system using Laravel. It offers a realtime analytics dashboard, item monitoring, and a responsive and user-friendly interface.  </p>
+    <div class="row g-4">
+      <div class="col-lg-4 reveal">
+        <div class="card-surface hover-lift p-3 h-100">
+          <div class="project-media mb-3">
+            <img src="dcp.png" alt="DCP Inventory Management System preview">
+          </div>
+          <div class="px-2 pb-2">
+            <h3 class="h6 fw-semibold mb-2">DCP Inventory Management System</h3>
+            <p class="text-muted mb-3">
+              A real-time inventory management system using Laravel with analytics dashboard, item monitoring, and a
+              responsive UI.
+            </p>
+            <div class="d-flex gap-2 flex-wrap">
+              <span class="badge text-bg-light border">Laravel</span>
+              <span class="badge text-bg-light border">MySQL</span>
+              <span class="badge text-bg-light border">Bootstrap</span>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- Project Card 2 -->
-        <div  class="col-md-4  project-card card p-2">
+      <div class="col-lg-4 reveal">
+        <div class="card-surface hover-lift p-3 h-100">
+          <div class="project-media mb-3">
+            <img src="csm.png" alt="Customer Satisfaction Measurement preview">
+          </div>
+          <div class="px-2 pb-2">
+            <h3 class="h6 fw-semibold mb-2">Customer Satisfaction Measurement</h3>
+            <p class="text-muted mb-3">
+              Capstone project: interactive analytics dashboard using Laravel and MySQL to present accurate, real-time
+              insights.
+            </p>
+            <div class="d-flex gap-2 flex-wrap">
+              <span class="badge text-bg-light border">Laravel</span>
+              <span class="badge text-bg-light border">Analytics</span>
+              <span class="badge text-bg-light border">Dashboard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 reveal">
+        <div class="card-surface hover-lift p-4 h-100 d-flex flex-column justify-content-between">
           <div>
-            <img src="csm.png" alt="Project 2" class="img-fluid  ">
-            <div class="p-2">
-              <h5>Customer Satisfaction Measurement</h5>
-              <p style="font-size:18px">As part of our Capstone Project, we built an interactive analytics dashboard using Laravel and MySQL to present accurate, real-time data insights and enhance organizational reporting.</p>
-            </div>
+            <div class="media-placeholder mb-3">Project image placeholder</div>
+            <h3 class="h6 fw-semibold mb-2">Your Next Project</h3>
+            <p class="text-muted mb-0">Add a short description and replace the placeholder with an image.</p>
+          </div>
+          <div class="mt-3 d-flex gap-2 flex-wrap">
+            <span class="badge text-bg-light border">Coming soon</span>
           </div>
         </div>
-
-        <!-- Project Card 3 -->
-       
       </div>
     </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="container-fluid px-4 px-md-5 py-5">
+    <div class="text-center text-md-start mb-4 reveal">
+      <h2 class="section-title h3 mb-1">Skills</h2>
+      <div class="section-subtitle">Languages & technologies I use</div>
+    </div>
+
+    <div class="row g-4 justify-content-center">
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal">
+        <div class="skill-card text-center p-3 h-100">
+          <img src="./images/skills/php.png" class="mx-auto mb-3" alt="PHP logo" style="height:60px;">
+          <h3 class="h6 fw-semibold mb-0">PHP</h3>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal">
+        <div class="skill-card text-center p-3 h-100">
+          <img src="./images/skills/laravel.png" class="mx-auto mb-3" alt="Laravel logo" style="width:60px; height:60px;">
+          <h3 class="h6 fw-semibold mb-0">Laravel</h3>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal">
+        <div class="skill-card text-center p-3 h-100">
+          <img src="./images/skills/javascript.png" class="mx-auto mb-3" alt="JavaScript logo" style="width:60px; height:60px;">
+          <h3 class="h6 fw-semibold mb-0">JavaScript</h3>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal">
+        <div class="skill-card text-center p-3 h-100">
+          <img src="./images/skills/html.png" class="mx-auto mb-3" alt="HTML5 logo" style="width:60px; height:60px;">
+          <h3 class="h6 fw-semibold mb-0">HTML5</h3>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal">
+        <div class="skill-card text-center p-3 h-100">
+          <img src="./images/skills/css.svg" class="mx-auto mb-3" alt="CSS logo" style="width:60px; height:60px;">
+          <h3 class="h6 fw-semibold mb-0">CSS</h3>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal">
+        <div class="skill-card text-center p-3 h-100">
+          <img src="./images/skills/tailwind.png" class="mx-auto mb-3" alt="Tailwind CSS logo"
+            style="width:60px; height:60px;">
+          <h3 class="h6 fw-semibold mb-0">Tailwind</h3>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal">
+        <div class="skill-card text-center p-3 h-100">
+          <img src="./images/skills/boostrap.png" class="mx-auto mb-3" alt="Bootstrap logo" style="width:60px; height:60px;">
+          <h3 class="h6 fw-semibold mb-0">Bootstrap</h3>
+        </div>
+      </div>
+
+      <div class="col-6 col-sm-4 col-md-3 col-lg-2 reveal">
+        <div class="skill-card text-center p-3 h-100">
+          <img src="./images/skills/mysql.svg" class="mx-auto mb-3" alt="MySQL logo" style="width:60px; height:60px;">
+          <h3 class="h6 fw-semibold mb-0">MySQL</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="container-fluid px-4 px-md-5 py-5">
+    <div class="text-center text-md-start mb-4 reveal">
+      <h2 class="section-title h3 mb-1">Contact</h2>
+      <div class="section-subtitle">Let’s build something together</div>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4 reveal">
+        <div class="card-surface hover-lift p-4 h-100">
+          <h3 class="h6 fw-semibold mb-1">Email</h3>
+          <div class="text-muted mb-3">your-email@example.com</div>
+          <div class="text-muted">Replace with your real email.</div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal">
+        <div class="card-surface hover-lift p-4 h-100">
+          <h3 class="h6 fw-semibold mb-1">GitHub</h3>
+          <div class="text-muted mb-3">github.com/your-username</div>
+          <div class="text-muted">Replace with your GitHub link.</div>
+        </div>
+      </div>
+
+      <div class="col-md-4 reveal">
+        <div class="card-surface hover-lift p-4 h-100">
+          <h3 class="h6 fw-semibold mb-1">LinkedIn</h3>
+          <div class="text-muted mb-3">linkedin.com/in/your-name</div>
+          <div class="text-muted">Replace with your LinkedIn link.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="text-center text-muted mt-4 reveal">© <span id="year"></span> Em-jay Nerizon</div>
   </section>
 
   <!-- BOOTSTRAP JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    (function () {
+      const root = document.documentElement;
+      const btn = document.getElementById("themeToggle");
+      const label = btn?.querySelector("[data-theme-label]");
+
+      function setTheme(next) {
+        root.setAttribute("data-theme", next);
+        localStorage.setItem("theme", next);
+        if (label) label.textContent = next === "dark" ? "Dark" : "Light";
+        btn?.setAttribute("aria-label", next === "dark" ? "Switch to light mode" : "Switch to dark mode");
+      }
+
+      const stored = localStorage.getItem("theme");
+      const preferred = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      setTheme(stored || preferred);
+
+      btn?.addEventListener("click", () => {
+        const current = root.getAttribute("data-theme") === "dark" ? "dark" : "light";
+        setTheme(current === "dark" ? "light" : "dark");
+      });
+
+      const reveals = Array.from(document.querySelectorAll(".reveal"));
+      if (!("IntersectionObserver" in window)) {
+        for (const el of reveals) el.classList.add("is-visible");
+      } else {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            for (const entry of entries) {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+                observer.unobserve(entry.target);
+              }
+            }
+          },
+          { threshold: 0.12 }
+        );
+        for (const el of reveals) observer.observe(el);
+      }
+
+      const yearEl = document.getElementById("year");
+      if (yearEl) yearEl.textContent = new Date().getFullYear();
+    })();
+  </script>
 </body>
 
 </html>
