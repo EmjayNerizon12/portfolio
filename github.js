@@ -8,14 +8,12 @@
   const bioEl = document.getElementById("githubBio");
   const avatarEl = document.getElementById("githubAvatar");
   const profileLinkEl = document.getElementById("githubProfileLink");
-  const reposContainer = document.getElementById("githubProjects");
   const errorEl = document.getElementById("githubError");
   const contribContainer = document.getElementById("githubContributions");
   const contribYearEl = document.getElementById("githubContribYear");
   const contribErrorEl = document.getElementById("githubContribError");
   const contribMonthsEl = document.getElementById("githubContribMonths");
-
-  if (!reposContainer) return;
+  let cachedContributions = [];
 
   function showError(message) {
     if (!errorEl) return;
@@ -41,67 +39,20 @@
     contribErrorEl.classList.add("d-none");
   }
 
-  function renderRepoCard(repo) {
-    const col = document.createElement("div");
-    col.className = "col-md-6 col-lg-4 reveal";
-
-    const card = document.createElement("div");
-    card.className = "card-surface hover-lift p-4 h-100 d-flex flex-column";
-
-    const top = document.createElement("div");
-    top.className = "d-flex align-items-start justify-content-between gap-3";
-
-    const title = document.createElement("h3");
-    title.className = "h6 fw-semibold mb-2";
-    title.textContent = repo.name || "Repository";
-
-    const stars = document.createElement("span");
-    stars.className = "badge text-bg-light border";
-    stars.textContent = `⭐ ${repo.stargazers_count ?? 0}`;
-
-    top.appendChild(title);
-    top.appendChild(stars);
-
-    const desc = document.createElement("p");
-    desc.className = "text-muted mb-3";
-    desc.textContent = repo.description || "No description";
-
-    const bottom = document.createElement("div");
-    bottom.className = "d-flex gap-2 flex-wrap mt-auto align-items-center";
-
-    const lang = document.createElement("span");
-    lang.className = "badge text-bg-light border";
-    lang.textContent = repo.language || "Unknown";
-    bottom.appendChild(lang);
-
-    if (repo.archived) {
-      const archived = document.createElement("span");
-      archived.className = "badge text-bg-light border";
-      archived.textContent = "Archived";
-      bottom.appendChild(archived);
-    }
-
-    const link = document.createElement("a");
-    link.className = "btn btn-sm btn-outline-secondary ms-auto";
-    link.href = repo.html_url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.textContent = "View";
-    bottom.appendChild(link);
-
-    card.appendChild(top);
-    card.appendChild(desc);
-    card.appendChild(bottom);
-    col.appendChild(card);
-    return col;
+  function getContributionPalette() {
+    const isDark = document.documentElement.getAttribute("data-theme") === "dark";
+    return isDark
+      ? ["#161b22", "#0e4429", "#006d32", "#26a641", "#39d353"]
+      : ["#ebedf0", "#9be9a8", "#40c463", "#30a14e", "#216e39"];
   }
 
   function colorFromCount(count) {
-    if (count >= 15) return "#216e39";
-    if (count >= 10) return "#30a14e";
-    if (count >= 5) return "#40c463";
-    if (count >= 1) return "#9be9a8";
-    return "#ebedf0";
+    const palette = getContributionPalette();
+    if (count >= 15) return palette[4];
+    if (count >= 10) return palette[3];
+    if (count >= 5) return palette[2];
+    if (count >= 1) return palette[1];
+    return palette[0];
   }
 
   function normalizeContributions(contributions) {
@@ -111,7 +62,7 @@
 
     for (const day of sorted) {
       const date = new Date(`${day.date}T00:00:00`);
-      const dow = date.getDay(); // 0=Sun ... 6=Sat
+      const dow = date.getDay();
       if (dow === 0 && currentWeek.some(Boolean)) {
         weeks.push(currentWeek);
         currentWeek = new Array(7).fill(null);
@@ -123,7 +74,7 @@
       weeks.push(currentWeek);
     }
 
-    return { weeks, sorted };
+    return { weeks };
   }
 
   function renderMonths(weeks) {
@@ -158,6 +109,7 @@
 
   function renderContributions(contributions) {
     if (!contribContainer) return;
+    cachedContributions = contributions;
     contribContainer.innerHTML = "";
 
     const fragment = document.createDocumentFragment();
@@ -172,8 +124,8 @@
         const cell = document.createElement("div");
         cell.className = "github-contrib-day";
         if (day) {
-          cell.style.backgroundColor = day.color || colorFromCount(day.count || 0);
           const count = day.count ?? 0;
+          cell.style.backgroundColor = colorFromCount(count);
           cell.title = `${day.date}: ${count} contribution${count === 1 ? "" : "s"}`;
         }
         fragment.appendChild(cell);
@@ -207,18 +159,6 @@
         profileLinkEl.target = "_blank";
         profileLinkEl.rel = "noopener noreferrer";
       }
-
-      const repos = await fetchJson(
-        `https://api.github.com/users/${encodeURIComponent(username)}/repos?sort=updated&per_page=12`
-      );
-
-      reposContainer.innerHTML = "";
-      for (const repo of repos.filter((r) => !r.fork)) {
-        reposContainer.appendChild(renderRepoCard(repo));
-      }
-
-      const reveals = Array.from(reposContainer.querySelectorAll(".reveal"));
-      for (const el of reveals) el.classList.add("is-visible");
 
       if (contribContainer) {
         clearContribError();
@@ -256,9 +196,7 @@
         }
       }
     } catch (err) {
-      showError(
-        "Unable to load GitHub repositories right now. (Tip: GitHub API has rate limits, so try again later.)"
-      );
+      showError("Unable to load GitHub profile right now. (Tip: GitHub API has rate limits, so try again later.)");
     }
   }
 
@@ -267,4 +205,15 @@
   } else {
     load();
   }
+
+  const themeObserver = new MutationObserver(() => {
+    if (cachedContributions.length) {
+      renderContributions(cachedContributions);
+    }
+  });
+
+  themeObserver.observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-theme"],
+  });
 })();
