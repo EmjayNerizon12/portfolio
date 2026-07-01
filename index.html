@@ -361,7 +361,8 @@
                 </div>
                 <div class="max-w-6xl w-full">
                     <!-- Project 1 -->
-                    <div class="border border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm p-3 mb-4">
+                    <div
+                        class="border border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm p-3 mb-4 space-y-2">
                         <div class="flex flex-wrap flex-row items-center gap-2">
                             <div class="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-white shadow">
                                 <img src="./profile.JPG" alt="profile picture" class="w-full h-full object-cover">
@@ -376,10 +377,23 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="text-lg font-semibold hover:text-blue-800">
-                            Customer Satisfaction Measurement and Support System with Data Analytics
+                        <p class="text-lg font-semibold hover:text-blue-800 leading-2 text-justify">
+                            AI-Powered Customer Satisfaction Measurement and Support System with Data Analytics
                         </p>
-                        <div class="flex flex-col gap-1 rounded-md overflow-hidden bg-gray-100">
+                        <p class="text-gray-600 text-xs leading-2 text-justify">
+                            A research project that aims to provide a solution to the problem of customer satisfaction
+                            measurement and support system by combining the use of AI and data analytics.
+                        </p>
+                        <p class="text-gray-600 text-xs leading-2 text-justify">
+                            The development of the project starts on <span class="font-medium">March 2025</span> and
+                            currently maintained today.
+                        </p>
+                        <p class="text-gray-600 text-xs leading-2 text-justify">
+                            <span class="font-medium">Features: </span> Data Collection with Data Privacy
+                            Compliance, AI-Powered Sentiment Analysis, Interactive Dashboard and Analytics, Result
+                            Visualization, Report Generation.
+                        </p>
+                        <div class="flex flex-col gap-1 rounded-md overflow-hidden bg-gray-100 project-gallery">
                             <div class="grid grid-cols-2 gap-1">
                                 <div class="aspect-video overflow-hidden bg-gray-200">
                                     <img src="./images/project/csm/csm-1.png" alt="Project screenshot 1"
@@ -407,7 +421,8 @@
                         </div>
                     </div>
                     <!-- Project 2 -->
-                    <div class="border border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm p-3 mb-2">
+                    <div
+                        class="border border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm p-3 mb-2 space-y-2">
                         <div class="flex flex-wrap flex-row items-center gap-2">
                             <div class="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-white shadow">
                                 <img src="./profile.JPG" alt="profile picture" class="w-full h-full object-cover">
@@ -422,10 +437,24 @@
                                 </div>
                             </div>
                         </div>
-                        <p class="text-lg font-semibold hover:text-blue-800">
+                        <p class="text-lg font-semibold hover:text-blue-800 leading-2 text-justify">
                             DepEd Computerization Program - Inventory Management System
                         </p>
-                        <div class="flex flex-col gap-1 rounded-md overflow-hidden bg-gray-100">
+                        <p class="text-gray-600 text-xs leading-2 text-justify">
+                            A web-based inventory management system that focused on monitoring and updating the status
+                            of
+                            DCP Products.
+                        </p>
+                        <p class="text-gray-600 text-xs leading-2 text-justify">
+                            The development of the project starts on <span class="font-medium">June 2025</span> and
+                            is currently deployed at Information Technology Unit of Schools Division Office of San
+                            Carlos City.
+                        </p>
+                        <p class="text-gray-600 text-xs leading-2 text-justify">
+                            <span class="font-medium">Features: </span> Product Categorization, Product Details, Status
+                            Tracking, QR Code Generation, Assets Monitoring.
+                        </p>
+                        <div class="flex flex-col gap-1 rounded-md overflow-hidden bg-gray-100 project-gallery">
                             <div class="grid grid-cols-2 gap-1">
                                 <div class="aspect-video overflow-hidden bg-gray-200">
                                     <img src="./images/project/dcp/dcp-1.png" alt="Project screenshot 1"
@@ -463,6 +492,108 @@
         </div>
     </footer>
 
+    <!-- Image Carousel Modal -->
+    <div id="image-carousel-modal" class="fixed inset-0 z-50 hidden bg-black/90 flex flex-col justify-center items-center backdrop-blur-sm transition-opacity">
+        <button id="carousel-close" class="absolute top-4 right-4 text-white/70 hover:text-white z-50 p-2 transition">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+
+        <div class="relative w-full max-w-6xl px-4 flex items-center justify-between">
+            <button id="carousel-prev" class="text-white/70 hover:text-white p-2 focus:outline-none transition">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+
+            <div class="flex-1 flex justify-center items-center px-4 select-none">
+                <img id="carousel-image" src="" alt="Carousel View" class="max-h-[85vh] max-w-full object-contain shadow-2xl rounded">
+            </div>
+
+            <button id="carousel-next" class="text-white/70 hover:text-white p-2 focus:outline-none transition">
+                <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
+        
+        <div id="carousel-counter" class="absolute bottom-6 text-white text-sm bg-black/50 px-4 py-1.5 rounded-full font-medium tracking-wide">
+            1 / 5
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const modal = document.getElementById('image-carousel-modal');
+            const carouselImage = document.getElementById('carousel-image');
+            const btnClose = document.getElementById('carousel-close');
+            const btnPrev = document.getElementById('carousel-prev');
+            const btnNext = document.getElementById('carousel-next');
+            const counter = document.getElementById('carousel-counter');
+            
+            let currentImages = [];
+            let currentIndex = 0;
+
+            const updateCarousel = () => {
+                if (currentImages.length > 0) {
+                    carouselImage.src = currentImages[currentIndex].src;
+                    counter.textContent = `${currentIndex + 1} / ${currentImages.length}`;
+                }
+            };
+
+            const openCarousel = (images, index) => {
+                currentImages = Array.from(images);
+                currentIndex = index;
+                updateCarousel();
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            };
+
+            const closeCarousel = () => {
+                modal.classList.add('hidden');
+                document.body.style.overflow = '';
+            };
+
+            const nextImage = (e) => {
+                if (e) e.stopPropagation();
+                currentIndex = (currentIndex + 1) % currentImages.length;
+                updateCarousel();
+            };
+
+            const prevImage = (e) => {
+                if (e) e.stopPropagation();
+                currentIndex = (currentIndex - 1 + currentImages.length) % currentImages.length;
+                updateCarousel();
+            };
+
+            const galleries = document.querySelectorAll('.project-gallery');
+            galleries.forEach(gallery => {
+                const images = gallery.querySelectorAll('img');
+                images.forEach((img, index) => {
+                    img.addEventListener('click', () => openCarousel(images, index));
+                });
+            });
+
+            btnClose.addEventListener('click', closeCarousel);
+            btnNext.addEventListener('click', nextImage);
+            btnPrev.addEventListener('click', prevImage);
+            
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal || (e.target.tagName === 'DIV' && e.target.classList.contains('flex-1'))) {
+                    closeCarousel();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (!modal.classList.contains('hidden')) {
+                    if (e.key === 'Escape') closeCarousel();
+                    if (e.key === 'ArrowRight') nextImage();
+                    if (e.key === 'ArrowLeft') prevImage();
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
