@@ -27,6 +27,21 @@
         .animate-marquee {
             animation: marquee 20s linear infinite;
         }
+
+        /* Mobile: fix both nav dropdowns to viewport width below navbar */
+        @media (max-width: 639px) {
+            #projects-dropdown-menu,
+            #socials-dropdown-menu {
+                position: fixed !important;
+                top: 60px !important;
+                left: 8px !important;
+                right: 8px !important;
+                width: auto !important;
+                max-width: none !important;
+                margin-top: 0 !important;
+                border-radius: 0.75rem !important;
+            }
+        }
     </style>
 </head>
 
@@ -53,7 +68,7 @@
 
                     <!-- Projects Dropdown Menu -->
                     <div id="projects-dropdown-menu"
-                        class="hidden absolute right-0 mt-3 w-[400px] bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden text-gray-800 z-50 origin-top-right transition transform scale-95 opacity-0 duration-150 ease-out">
+                        class="hidden absolute right-0 mt-3 sm:w-[400px] bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden text-gray-800 z-50 origin-top-right transition transform scale-95 opacity-0 duration-150 ease-out">
                         <div class="px-5 py-3 border-b border-gray-50 flex justify-between items-center bg-white">
                             <span class="text-xs font-bold text-gray-500 tracking-wider">PROJECTS</span>
                         </div>
@@ -93,7 +108,7 @@
 
                     <!-- Dropdown Menu -->
                     <div id="socials-dropdown-menu"
-                        class="hidden absolute right-0 mt-3 w-[320px] bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden text-gray-800 z-50 origin-top-right transition transform scale-95 opacity-0 duration-150 ease-out">
+                        class="hidden absolute right-0 mt-3 sm:w-[320px] bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden text-gray-800 z-50 origin-top-right transition transform scale-95 opacity-0 duration-150 ease-out">
                         <div class="px-5 py-3 border-b border-gray-50 flex justify-between items-center bg-white">
                             <span class="text-xs font-bold text-gray-500 tracking-wider">SOCIALS & MESSAGES</span>
                             <span
@@ -653,8 +668,15 @@
                         <span class="bg-indigo-50 text-indigo-600 text-[11px] font-bold px-2.5 py-1 rounded-md">48 Total</span>
                     </div>
                     
+                    <style>
+                        @media (max-width: 767px) {
+                            .mobile-collapsed > div:nth-child(n+7) {
+                                display: none;
+                            }
+                        }
+                    </style>
                     <div class="project-gallery mt-2 flex-1 min-h-0 overflow-y-auto pr-1 custom-scrollbar">
-                        <div class="grid grid-cols-3 gap-1">
+                        <div id="photos-grid" class="grid grid-cols-3 gap-1 mobile-collapsed">
                             <!-- CSM Project -->
                             <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/csm/csm-1.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
                             <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/csm/csm-2.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
@@ -719,6 +741,7 @@
                             <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/certificate/javascript-essentials-2.jpg" alt="Certificate" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
                             <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/certificate/data-analytics-essentials.jpg" alt="Certificate" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
                         </div>
+                        <button id="toggle-photos-btn" class="md:hidden w-full mt-2 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold rounded-md transition" onclick="togglePhotos()">Show All Photos</button>
                     </div>
                 </div>
                 <div class="max-w-6xl w-full">
@@ -1274,6 +1297,23 @@
                 }
             });
         });
+
+        function togglePhotos() {
+            const grid = document.getElementById('photos-grid');
+            const btn = document.getElementById('toggle-photos-btn');
+            
+            if (grid.classList.contains('mobile-collapsed')) {
+                grid.classList.remove('mobile-collapsed');
+                btn.textContent = 'Show Less';
+            } else {
+                grid.classList.add('mobile-collapsed');
+                btn.textContent = 'Show All Photos';
+                
+                setTimeout(() => {
+                    btn.scrollIntoView({ behavior: 'smooth', block: 'end' });
+                }, 50);
+            }
+        }
     </script>
 </body>
 
