@@ -30,6 +30,7 @@
 
         /* Mobile: fix both nav dropdowns to viewport width below navbar */
         @media (max-width: 639px) {
+
             #projects-dropdown-menu,
             #socials-dropdown-menu {
                 position: fixed !important;
@@ -253,7 +254,8 @@
                             <a href="https://www.linkedin.com/in/emjay-nerizon-1ba274376/" target="_blank"
                                 class="btn btn-sm md:text-sm text-xs bg-gray-900 hover:bg-gray-800 px-5 py-2 rounded-lg shadow text-white font-semibold tracking-wide transition flex items-center gap-2">
                                 <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                    <path
+                                        d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                                 </svg>
                                 Connect
                             </a>
@@ -261,54 +263,82 @@
                                 <button id="send-message-dropdown-btn"
                                     class="btn btn-sm md:text-sm text-xs bg-white hover:bg-gray-50 border border-gray-300 px-5 py-2 rounded-lg shadow-sm text-gray-700 font-semibold tracking-wide transition flex items-center gap-2">
                                     Send Message
-                                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                                    <svg class="w-4 h-4 text-gray-500" fill="none" stroke="currentColor"
+                                        viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M19 9l-7 7-7-7"></path>
                                     </svg>
                                 </button>
-                                
+
                                 <!-- Send Message Dropdown Menu -->
                                 <div id="send-message-dropdown-menu"
                                     class="hidden absolute right-0 mt-2 w-[300px] bg-white rounded-xl shadow-[0_4px_20px_-4px_rgba(0,0,0,0.1)] border border-gray-100 overflow-hidden text-gray-800 z-50 origin-top-right transition transform scale-95 opacity-0 duration-150 ease-out">
                                     <div class="px-5 py-3 border-b border-gray-50 bg-gray-50/50">
-                                        <span class="text-[11px] font-bold text-gray-500 tracking-wider">CHOOSE AN ACTION</span>
+                                        <span class="text-[11px] font-bold text-gray-500 tracking-wider">CHOOSE AN
+                                            ACTION</span>
                                     </div>
                                     <div class="flex flex-col py-1">
                                         <a href="https://github.com/EmjayNerizon12" target="_blank"
                                             class="flex items-center px-5 py-3 hover:bg-gray-50 transition group">
                                             <svg class="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
-                                                <path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"></path>
+                                                <path fill-rule="evenodd"
+                                                    d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                                    clip-rule="evenodd"></path>
                                             </svg>
-                                            <span class="ml-4 flex-1 text-sm font-semibold text-gray-700">Follow on GitHub</span>
-                                            <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            <span class="ml-4 flex-1 text-sm font-semibold text-gray-700">Follow on
+                                                GitHub</span>
+                                            <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                                </path>
                                             </svg>
                                         </a>
                                         <a href="https://www.linkedin.com/in/emjay-nerizon-1ba274376/" target="_blank"
                                             class="flex items-center px-5 py-3 hover:bg-gray-50 transition group">
                                             <svg class="w-5 h-5 text-gray-700" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                                                <path
+                                                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
                                             </svg>
-                                            <span class="ml-4 flex-1 text-sm font-semibold text-gray-700">Connect via LinkedIn</span>
-                                            <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            <span class="ml-4 flex-1 text-sm font-semibold text-gray-700">Connect via
+                                                LinkedIn</span>
+                                            <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                                </path>
                                             </svg>
                                         </a>
-                                        <a href="#" class="flex items-center px-5 py-3 hover:bg-gray-50 transition group">
+                                        <a href="#"
+                                            class="flex items-center px-5 py-3 hover:bg-gray-50 transition group">
                                             <svg class="w-5 h-5 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
-                                                <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
+                                                <path
+                                                    d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z" />
                                             </svg>
-                                            <span class="ml-4 flex-1 text-sm font-semibold text-gray-700">Follow on Facebook</span>
-                                            <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            <span class="ml-4 flex-1 text-sm font-semibold text-gray-700">Follow on
+                                                Facebook</span>
+                                            <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                                </path>
                                             </svg>
                                         </a>
-                                        <a href="mailto:emjaynerizon@gmail.com" class="flex items-center px-5 py-3 hover:bg-gray-50 transition group">
-                                            <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        <a href="mailto:emjaynerizon@gmail.com"
+                                            class="flex items-center px-5 py-3 hover:bg-gray-50 transition group">
+                                            <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor"
+                                                viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z">
+                                                </path>
                                             </svg>
-                                            <span class="ml-4 flex-1 text-sm font-semibold text-gray-700">Send Email Profile Inquiry</span>
-                                            <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                            <span class="ml-4 flex-1 text-sm font-semibold text-gray-700">Send Email
+                                                Profile Inquiry</span>
+                                            <svg class="w-4 h-4 text-gray-400 group-hover:text-blue-500 transition"
+                                                fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                                    d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14">
+                                                </path>
                                             </svg>
                                         </a>
                                     </div>
@@ -340,17 +370,19 @@
 
             <div class="flex md:flex-row flex-col gap-4">
 
-                <div class="max-w-sm w-full border border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm p-4 flex flex-col">
+                <div
+                    class="max-w-sm w-full border border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm p-4 flex flex-col">
 
                     <!-- CV / Resume Card -->
                     <div class="relative rounded-xl overflow-hidden mb-4 bg-gray-900 p-4 text-white shadow">
                         <div class="absolute -top-4 -right-4 w-24 h-24 bg-white/5 rounded-full"></div>
                         <div class="absolute -bottom-6 -left-4 w-20 h-20 bg-white/5 rounded-full"></div>
                         <div class="flex items-center gap-3 mb-3">
-                            <div class="w-10 h-10 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0">
+                            <div
+                                class="w-10 h-10 rounded-lg bg-white/15 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                        d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                                 </svg>
                             </div>
                             <div>
@@ -366,9 +398,9 @@
                                 class="flex-1 flex items-center justify-center gap-1.5 py-1.5 bg-white text-gray-900 text-xs font-bold rounded-lg hover:bg-gray-100 transition">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
                                 </svg>
                                 View CV
                             </a>
@@ -376,7 +408,7 @@
                                 class="flex-1 flex items-center justify-center gap-1.5 py-1.5 bg-white/10 hover:bg-white/20 text-white text-xs font-bold rounded-lg border border-white/20 transition">
                                 <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                                        d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                                 </svg>
                                 Download
                             </a>
@@ -662,15 +694,17 @@
                     <hr class="my-4 border-gray-200 shrink-0">
                     <div class="flex justify-between items-start mb-3 shrink-0">
                         <div>
-                            <h2 class="text-2xl font-bold text-gray-900 leading-tight">Photos</h2>
-                            <p class="text-[10px] font-bold text-gray-400 tracking-wider uppercase mt-1">Project Screenshots</p>
+                            <h2 class="font-bold text-xl text-gray-900 mb-2">Photos</h2>
+                            <p class="text-[10px] font-bold text-gray-400 tracking-wider uppercase mt-1">Project
+                                Screenshots & Certificates</p>
                         </div>
-                        <span class="bg-indigo-50 text-indigo-600 text-[11px] font-bold px-2.5 py-1 rounded-md">48 Total</span>
+                        <span class="bg-indigo-50 text-indigo-600 text-[11px] font-bold px-2.5 py-1 rounded-md">48
+                            Total</span>
                     </div>
-                    
+
                     <style>
                         @media (max-width: 767px) {
-                            .mobile-collapsed > div:nth-child(n+7) {
+                            .mobile-collapsed>div:nth-child(n+7) {
                                 display: none;
                             }
                         }
@@ -678,70 +712,168 @@
                     <div class="project-gallery mt-2 flex-1 min-h-0 overflow-y-auto pr-1 custom-scrollbar">
                         <div id="photos-grid" class="grid grid-cols-3 gap-1 mobile-collapsed">
                             <!-- CSM Project -->
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/csm/csm-1.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/csm/csm-2.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/csm/csm-3.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/csm/csm-4.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/csm/csm-5.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/csm/csm-6.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/csm/csm-7.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/csm/csm-1.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/csm/csm-2.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/csm/csm-3.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/csm/csm-4.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/csm/csm-5.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/csm/csm-6.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/csm/csm-7.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+
                             <!-- DCP Project -->
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/dcp/dcp-1.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/dcp/dcp-2.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/dcp/dcp-3.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/dcp/dcp-4.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/dcp/dcp-5.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/dcp/dcp-6.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/dcp/dcp-7.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/dcp/dcp-1.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/dcp/dcp-2.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/dcp/dcp-3.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/dcp/dcp-4.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/dcp/dcp-5.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/dcp/dcp-6.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/dcp/dcp-7.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
 
                             <!-- HRIS Project -->
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/hris/foxter1.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/hris/foxter2.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/hris/foxter3.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/hris/foxter4.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/hris/foxter5.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/hris/foxter1.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/hris/foxter2.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/hris/foxter3.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/hris/foxter4.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/hris/foxter5.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
 
                             <!-- Alumni Project -->
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/alumni/alumni-1.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/alumni/alumni-2.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/alumni/alumni-3.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/alumni/alumni-4.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/alumni/alumni-5.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/alumni/alumni-6.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/alumni/alumni-7.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/alumni/alumni-1.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/alumni/alumni-2.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/alumni/alumni-3.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/alumni/alumni-4.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/alumni/alumni-5.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/alumni/alumni-6.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/alumni/alumni-7.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
 
                             <!-- Django Project -->
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/django/django1.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/django/django2.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/django/django3.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/django/django4.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/django/django5.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/django/django6.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/django/django7.png" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/django/django1.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/django/django2.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/django/django3.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/django/django4.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/django/django5.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/django/django6.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/django/django7.png" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
 
                             <!-- Kotlin Project -->
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/kotlin/kotlin1.jpg" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/kotlin/kotlin2.jpg" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/kotlin/kotlin3.jpg" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/kotlin/kotlin4.jpg" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/kotlin/kotlin5.jpg" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/kotlin/kotlin6.jpg" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/project/kotlin/kotlin7.jpg" alt="Screenshot" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/kotlin/kotlin1.jpg" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/kotlin/kotlin2.jpg" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/kotlin/kotlin3.jpg" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/kotlin/kotlin4.jpg" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/kotlin/kotlin5.jpg" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/kotlin/kotlin6.jpg" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/project/kotlin/kotlin7.jpg" alt="Screenshot"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
 
                             <!-- Webinars -->
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/webinar/basic-python.png" alt="Certificate" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/webinar/smart-decision.jpg" alt="Certificate" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/webinar/ai-future-work.png" alt="Certificate" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/webinar/basic-python.png" alt="Certificate"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/webinar/smart-decision.jpg" alt="Certificate"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/webinar/ai-future-work.png" alt="Certificate"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
 
                             <!-- Cisco Certificates -->
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/certificate/intro-to-modern-ai.jpg" alt="Certificate" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/certificate/javascript-essentials-1.jpg" alt="Certificate" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/certificate/css-essentials.jpg" alt="Certificate" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/certificate/javascript-essentials-2.jpg" alt="Certificate" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
-                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img src="./images/certificate/data-analytics-essentials.jpg" alt="Certificate" class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/certificate/intro-to-modern-ai.jpg" alt="Certificate"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/certificate/javascript-essentials-1.jpg" alt="Certificate"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/certificate/css-essentials.jpg" alt="Certificate"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/certificate/javascript-essentials-2.jpg" alt="Certificate"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
+                            <div class="overflow-hidden bg-gray-100" style="aspect-ratio: 1 / 1;"><img
+                                    src="./images/certificate/data-analytics-essentials.jpg" alt="Certificate"
+                                    class="w-full h-full object-cover hover:opacity-90 transition cursor-pointer"></div>
                         </div>
-                        <button id="toggle-photos-btn" class="md:hidden w-full mt-2 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold rounded-md transition" onclick="togglePhotos()">Show All Photos</button>
+                        <button id="toggle-photos-btn"
+                            class="md:hidden w-full mt-2 py-2 bg-gray-100 hover:bg-gray-200 text-gray-700 text-xs font-bold rounded-md transition"
+                            onclick="togglePhotos()">Show All Photos</button>
                     </div>
                 </div>
                 <div class="max-w-6xl w-full">
@@ -983,7 +1115,136 @@
                         </div>
                     </div>
 
-                    <!-- Webinars (Combined) -->
+                    <!-- Other Projects (Django, Kotlin, Alumni) -->
+                    <div
+                        class="border border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm p-3 mb-4 space-y-2">
+                        <div class="flex flex-wrap flex-row items-center gap-2">
+                            <div class="w-12 h-12 rounded-full border-4 border-white overflow-hidden bg-white shadow">
+                                <img src="./profile.JPG" alt="profile picture" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex flex-col items-start gap-0">
+                                <h4 class="text-md font-bold text-gray-900 mb-0">Em-jay A. Nerizon</h4>
+                                <div class="text-xs text-gray-500 small">San Carlos City, Pangasinan</div>
+                            </div>
+                        </div>
+
+                        <p class="text-lg font-semibold hover:text-blue-800 leading-2 text-justify">Other Projects</p>
+                        <p class="text-gray-600 text-xs leading-relaxed text-justify">
+                            A collection of other software projects I've built — covering web applications, mobile
+                            development, and full-stack systems using Python/Django, Kotlin (Android), and Laravel.
+                        </p>
+
+                        <!-- Django / Office Dashboard -->
+                        <div class="pt-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span
+                                    class="inline-block bg-green-100 text-green-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Python
+                                    · Django</span>
+                                <span class="text-xs font-semibold text-gray-700">Office Section Dashboard</span>
+                            </div>
+                            <p class="text-gray-500 text-xs leading-relaxed">
+                                A dynamic web-based office management dashboard built with Django. Includes
+                                section-level analytics, employee tracking, data visualization, and a clean admin
+                                interface.
+                            </p>
+                        </div>
+
+                        <hr class="border-gray-100 my-2">
+
+                        <!-- Kotlin / Mobile App -->
+                        <div class="pt-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span
+                                    class="inline-block bg-purple-100 text-purple-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Kotlin
+                                    · Android</span>
+                                <span class="text-xs font-semibold text-gray-700">Mobile Application</span>
+                            </div>
+                            <p class="text-gray-500 text-xs leading-relaxed">
+                                A native Android mobile application developed in Kotlin. Focuses on delivering a smooth,
+                                intuitive user experience with real-time data handling and modern Android architecture
+                                components.
+                            </p>
+                        </div>
+
+                        <hr class="border-gray-100 my-2">
+
+                        <!-- Alumni Tracking System -->
+                        <div class="pt-1">
+                            <div class="flex items-center gap-2 mb-1">
+                                <span
+                                    class="inline-block bg-blue-100 text-blue-700 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">Laravel
+                                    · PHP</span>
+                                <span class="text-xs font-semibold text-gray-700">Alumni Tracking System</span>
+                            </div>
+                            <p class="text-gray-500 text-xs leading-relaxed">
+                                A web-based alumni management and tracking system built with Laravel. Allows the
+                                institution to maintain alumni records, track employment status, and generate graduate
+                                outcomes reports.
+                            </p>
+                        </div>
+
+                        <!-- Combined Gallery - Facebook style (2 rows visible, +15 overlay) -->
+                        <div class="flex flex-col gap-1 rounded-md overflow-hidden bg-gray-100 project-gallery mt-2">
+                            <div class="grid grid-cols-3 gap-1">
+                                <!-- Row 1 -->
+                                <div class="aspect-square overflow-hidden bg-gray-200"><img
+                                        src="./images/project/django/django1.png" alt="Django 1"
+                                        class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
+                                </div>
+                                <div class="aspect-square overflow-hidden bg-gray-200"><img
+                                        src="./images/project/django/django2.png" alt="Django 2"
+                                        class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
+                                </div>
+                                <div class="aspect-square overflow-hidden bg-gray-200"><img
+                                        src="./images/project/django/django3.png" alt="Django 3"
+                                        class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
+                                </div>
+                                <!-- Row 2: images 4 & 5 normal, image 6 has +15 overlay -->
+                                <div class="aspect-square overflow-hidden bg-gray-200"><img
+                                        src="./images/project/django/django4.png" alt="Django 4"
+                                        class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
+                                </div>
+                                <div class="aspect-square overflow-hidden bg-gray-200"><img
+                                        src="./images/project/django/django5.png" alt="Django 5"
+                                        class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
+                                </div>
+                                <!-- 6th slot: image with +15 overlay -->
+                                <div class="aspect-square overflow-hidden bg-gray-200 relative cursor-pointer">
+                                    <img src="./images/project/django/django6.png" alt="Django 6"
+                                        class="w-full h-full object-cover">
+                                    <div class="absolute inset-0 bg-black/60 flex items-center justify-center">
+                                        <span class="text-white text-xl font-bold">+15</span>
+                                    </div>
+                                </div>
+                                <!-- Hidden images (7-21) kept in DOM for lightbox navigation -->
+                                <div class="hidden"><img src="./images/project/django/django7.png" alt="Django 7"></div>
+                                <div class="hidden"><img src="./images/project/kotlin/kotlin1.jpg" alt="Kotlin 1"></div>
+                                <div class="hidden"><img src="./images/project/kotlin/kotlin2.jpg" alt="Kotlin 2"></div>
+                                <div class="hidden"><img src="./images/project/kotlin/kotlin3.jpg" alt="Kotlin 3"></div>
+                                <div class="hidden"><img src="./images/project/kotlin/kotlin4.jpg" alt="Kotlin 4"></div>
+                                <div class="hidden"><img src="./images/project/kotlin/kotlin5.jpg" alt="Kotlin 5"></div>
+                                <div class="hidden"><img src="./images/project/kotlin/kotlin6.jpg" alt="Kotlin 6"></div>
+                                <div class="hidden"><img src="./images/project/kotlin/kotlin7.jpg" alt="Kotlin 7"></div>
+                                <div class="hidden"><img src="./images/project/alumni/alumni-1.png" alt="Alumni 1">
+                                </div>
+                                <div class="hidden"><img src="./images/project/alumni/alumni-2.png" alt="Alumni 2">
+                                </div>
+                                <div class="hidden"><img src="./images/project/alumni/alumni-3.png" alt="Alumni 3">
+                                </div>
+                                <div class="hidden"><img src="./images/project/alumni/alumni-4.png" alt="Alumni 4">
+                                </div>
+                                <div class="hidden"><img src="./images/project/alumni/alumni-5.png" alt="Alumni 5">
+                                </div>
+                                <div class="hidden"><img src="./images/project/alumni/alumni-6.png" alt="Alumni 6">
+                                </div>
+                                <div class="hidden"><img src="./images/project/alumni/alumni-7.png" alt="Alumni 7">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <div
                         class="border border-gray-300 rounded-lg overflow-hidden bg-white shadow-sm p-3 mb-2 space-y-2">
                         <div class="flex flex-wrap flex-row items-center gap-2">
@@ -1005,29 +1266,38 @@
                         <ul class="text-gray-600 text-xs leading-relaxed space-y-1.5 list-none pl-0">
                             <li class="flex items-start gap-2">
                                 <span class="mt-0.5 text-blue-500 flex-shrink-0">&#9679;</span>
-                                <span><span class="font-medium">Basic Python Programming</span> — A 4-hour info session on Python fundamentals (syntax, data types, control flow) by DICT – Provincial Office of Catanduanes, Nov 15, 2025.</span>
+                                <span><span class="font-medium">Basic Python Programming</span> — A 4-hour info session
+                                    on Python fundamentals (syntax, data types, control flow) by DICT – Provincial
+                                    Office of Catanduanes, Nov 15, 2025.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="mt-0.5 text-blue-500 flex-shrink-0">&#9679;</span>
-                                <span><span class="font-medium">Smarter Decisions with Data: A Guide to Analytics and Mining</span> — Covered data analytics and mining techniques for strategic decision-making by DMMMSU-SLUC, CGS, Apr 26, 2025.</span>
+                                <span><span class="font-medium">Smarter Decisions with Data: A Guide to Analytics and
+                                        Mining</span> — Covered data analytics and mining techniques for strategic
+                                    decision-making by DMMMSU-SLUC, CGS, Apr 26, 2025.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="mt-0.5 text-blue-500 flex-shrink-0">&#9679;</span>
-                                <span><span class="font-medium">AI and the Future of Work: Transformation and Adaptation</span> — Explored AI's impact on the workforce, automation, and upskilling strategies by DMMMSU-SLUC, CGS, Apr 26, 2025.</span>
+                                <span><span class="font-medium">AI and the Future of Work: Transformation and
+                                        Adaptation</span> — Explored AI's impact on the workforce, automation, and
+                                    upskilling strategies by DMMMSU-SLUC, CGS, Apr 26, 2025.</span>
                             </li>
                         </ul>
                         <div class="flex flex-col gap-1 rounded-md overflow-hidden bg-gray-100 project-gallery">
                             <div class="grid grid-cols-3 gap-1">
                                 <div class="overflow-hidden bg-gray-200">
-                                    <img src="./images/webinar/basic-python.png" alt="Basic Python Programming Certificate"
+                                    <img src="./images/webinar/basic-python.png"
+                                        alt="Basic Python Programming Certificate"
                                         class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
                                 </div>
                                 <div class="overflow-hidden bg-gray-200">
-                                    <img src="./images/webinar/smart-decision.jpg" alt="Smarter Decisions with Data Certificate"
+                                    <img src="./images/webinar/smart-decision.jpg"
+                                        alt="Smarter Decisions with Data Certificate"
                                         class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
                                 </div>
                                 <div class="overflow-hidden bg-gray-200">
-                                    <img src="./images/webinar/ai-future-work.png" alt="AI and the Future of Work Certificate"
+                                    <img src="./images/webinar/ai-future-work.png"
+                                        alt="AI and the Future of Work Certificate"
                                         class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
                                 </div>
                             </div>
@@ -1053,37 +1323,48 @@
                         <p class="text-lg font-semibold hover:text-blue-800 leading-2">
                             Cisco Networking Academy Certificates (2026)
                         </p>
-                        <p class="text-gray-500 text-xs">Offered by DICT-ITU DTC Initiative through the Cisco Networking Academy program.</p>
+                        <p class="text-gray-500 text-xs">Offered by DICT-ITU DTC Initiative through the Cisco Networking
+                            Academy program.</p>
                         <ul class="text-gray-600 text-xs leading-relaxed space-y-1.5 list-none pl-0">
                             <li class="flex items-start gap-2">
                                 <span class="mt-0.5 text-blue-500 flex-shrink-0">&#9679;</span>
-                                <span><span class="font-medium">Introduction to Modern AI</span> — Fundamentals of modern artificial intelligence concepts and applications. Completed Jun 17, 2026.</span>
+                                <span><span class="font-medium">Introduction to Modern AI</span> — Fundamentals of
+                                    modern artificial intelligence concepts and applications. Completed Jun 17,
+                                    2026.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="mt-0.5 text-blue-500 flex-shrink-0">&#9679;</span>
-                                <span><span class="font-medium">JavaScript Essentials 1</span> — Core JavaScript syntax, variables, functions, and control flow. Completed Jun 18, 2026.</span>
+                                <span><span class="font-medium">JavaScript Essentials 1</span> — Core JavaScript syntax,
+                                    variables, functions, and control flow. Completed Jun 18, 2026.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="mt-0.5 text-blue-500 flex-shrink-0">&#9679;</span>
-                                <span><span class="font-medium">CSS Essentials</span> — Styling, layout, and responsive design with CSS. Completed Jun 19, 2026.</span>
+                                <span><span class="font-medium">CSS Essentials</span> — Styling, layout, and responsive
+                                    design with CSS. Completed Jun 19, 2026.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="mt-0.5 text-blue-500 flex-shrink-0">&#9679;</span>
-                                <span><span class="font-medium">JavaScript Essentials 2</span> — Advanced JavaScript including OOP, DOM manipulation, and asynchronous programming. Completed Jun 27, 2026.</span>
+                                <span><span class="font-medium">JavaScript Essentials 2</span> — Advanced JavaScript
+                                    including OOP, DOM manipulation, and asynchronous programming. Completed Jun 27,
+                                    2026.</span>
                             </li>
                             <li class="flex items-start gap-2">
                                 <span class="mt-0.5 text-blue-500 flex-shrink-0">&#9679;</span>
-                                <span><span class="font-medium">Data Analytics Essentials</span> — Data collection, analysis, visualization, and interpretation techniques. Completed Jun 29, 2026.</span>
+                                <span><span class="font-medium">Data Analytics Essentials</span> — Data collection,
+                                    analysis, visualization, and interpretation techniques. Completed Jun 29,
+                                    2026.</span>
                             </li>
                         </ul>
                         <div class="flex flex-col gap-1 rounded-md overflow-hidden bg-gray-100 project-gallery">
                             <div class="grid grid-cols-3 gap-1">
                                 <div class="overflow-hidden bg-gray-200">
-                                    <img src="./images/certificate/intro-to-modern-ai.jpg" alt="Introduction to Modern AI Certificate"
+                                    <img src="./images/certificate/intro-to-modern-ai.jpg"
+                                        alt="Introduction to Modern AI Certificate"
                                         class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
                                 </div>
                                 <div class="overflow-hidden bg-gray-200">
-                                    <img src="./images/certificate/javascript-essentials-1.jpg" alt="JavaScript Essentials 1 Certificate"
+                                    <img src="./images/certificate/javascript-essentials-1.jpg"
+                                        alt="JavaScript Essentials 1 Certificate"
                                         class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
                                 </div>
                                 <div class="overflow-hidden bg-gray-200">
@@ -1093,11 +1374,13 @@
                             </div>
                             <div class="grid grid-cols-2 gap-1">
                                 <div class="overflow-hidden bg-gray-200">
-                                    <img src="./images/certificate/javascript-essentials-2.jpg" alt="JavaScript Essentials 2 Certificate"
+                                    <img src="./images/certificate/javascript-essentials-2.jpg"
+                                        alt="JavaScript Essentials 2 Certificate"
                                         class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
                                 </div>
                                 <div class="overflow-hidden bg-gray-200">
-                                    <img src="./images/certificate/data-analytics-essentials.jpg" alt="Data Analytics Essentials Certificate"
+                                    <img src="./images/certificate/data-analytics-essentials.jpg"
+                                        alt="Data Analytics Essentials Certificate"
                                         class="w-full h-full object-cover hover:opacity-95 transition cursor-pointer">
                                 </div>
                             </div>
@@ -1226,7 +1509,7 @@
             // Socials Dropdown Toggle Logic
             const dropdownBtn = document.getElementById('socials-dropdown-btn');
             const dropdownMenu = document.getElementById('socials-dropdown-menu');
-            
+
             // Send Message Dropdown Toggle Logic
             const sendMessageBtn = document.getElementById('send-message-dropdown-btn');
             const sendMessageMenu = document.getElementById('send-message-dropdown-menu');
@@ -1270,7 +1553,7 @@
                     closeMenu(dropdownMenu);
                 }
             });
-            
+
             if (sendMessageBtn) {
                 sendMessageBtn.addEventListener('click', (e) => {
                     e.stopPropagation();
@@ -1301,14 +1584,14 @@
         function togglePhotos() {
             const grid = document.getElementById('photos-grid');
             const btn = document.getElementById('toggle-photos-btn');
-            
+
             if (grid.classList.contains('mobile-collapsed')) {
                 grid.classList.remove('mobile-collapsed');
                 btn.textContent = 'Show Less';
             } else {
                 grid.classList.add('mobile-collapsed');
                 btn.textContent = 'Show All Photos';
-                
+
                 setTimeout(() => {
                     btn.scrollIntoView({ behavior: 'smooth', block: 'end' });
                 }, 50);
