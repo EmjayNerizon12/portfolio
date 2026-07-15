@@ -1408,18 +1408,18 @@
         </button>
 
         <div class="relative w-full max-w-6xl px-4 flex items-center justify-between">
-            <button id="carousel-prev" class="text-white/70 hover:text-white p-2 focus:outline-none transition">
+            <button id="carousel-prev" class="hidden sm:block text-white/70 hover:text-white p-2 focus:outline-none transition">
                 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
                 </svg>
             </button>
 
-            <div class="flex-1 flex justify-center items-center px-4 select-none">
+            <div id="carousel-image-wrapper" class="flex-1 flex justify-center items-center select-none overflow-hidden">
                 <img id="carousel-image" src="" alt="Carousel View"
-                    class="max-h-[85vh] max-w-full object-contain shadow-2xl rounded">
+                    class="max-h-[85vh] max-w-full object-contain shadow-2xl rounded pointer-events-none">
             </div>
 
-            <button id="carousel-next" class="text-white/70 hover:text-white p-2 focus:outline-none transition">
+            <button id="carousel-next" class="hidden sm:block text-white/70 hover:text-white p-2 focus:outline-none transition">
                 <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
                 </svg>
@@ -1493,6 +1493,15 @@
                     closeCarousel();
                 }
             });
+
+            // Touch swipe support for mobile
+            let touchStartX = 0;
+            const wrapper = document.getElementById('carousel-image-wrapper');
+            wrapper.addEventListener('touchstart', (e) => { touchStartX = e.touches[0].clientX; }, { passive: true });
+            wrapper.addEventListener('touchend', (e) => {
+                const diff = touchStartX - e.changedTouches[0].clientX;
+                if (Math.abs(diff) > 40) diff > 0 ? nextImage() : prevImage();
+            }, { passive: true });
 
             document.addEventListener('keydown', (e) => {
                 if (!modal.classList.contains('hidden')) {
