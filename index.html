@@ -28,6 +28,82 @@
             animation: marquee 20s linear infinite;
         }
 
+        .post-actions {
+            position: absolute;
+            top: 0.75rem;
+            right: 0.75rem;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+
+        .post-action-btn {
+            width: 2.25rem;
+            height: 2.25rem;
+            border: 1px solid rgb(229 231 235);
+            border-radius: 9999px;
+            background: rgba(255, 255, 255, 0.95);
+            color: rgb(75 85 99);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 150ms ease, background-color 150ms ease, border-color 150ms ease, transform 150ms ease;
+        }
+
+        .post-action-btn:hover {
+            background: rgb(249 250 251);
+            color: rgb(17 24 39);
+            transform: translateY(-1px);
+        }
+
+        .post-like-btn.is-liked {
+            color: rgb(239 68 68);
+            border-color: rgb(254 202 202);
+            background: rgb(254 242 242);
+        }
+
+        .post-like-btn .heart-fill {
+            opacity: 0;
+            transition: opacity 150ms ease;
+        }
+
+        .post-like-btn.is-liked .heart-fill {
+            opacity: 1;
+        }
+
+        .post-share-menu {
+            position: absolute;
+            top: 2.75rem;
+            right: 0;
+            width: 12.5rem;
+            overflow: hidden;
+            border: 1px solid rgb(229 231 235);
+            border-radius: 0.75rem;
+            background: white;
+            box-shadow: 0 16px 35px -20px rgba(15, 23, 42, 0.5);
+        }
+
+        .post-share-menu button,
+        .post-share-menu a {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.65rem 0.85rem;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgb(55 65 81);
+            text-align: left;
+            transition: background-color 150ms ease, color 150ms ease;
+        }
+
+        .post-share-menu button:hover,
+        .post-share-menu a:hover {
+            background: rgb(249 250 251);
+            color: rgb(37 99 235);
+        }
+
         /* Mobile: fix both nav dropdowns to viewport width below navbar */
         @media (max-width: 639px) {
 
@@ -1512,6 +1588,112 @@
             let currentImages = [];
             let currentIndex = 0;
 
+            const copyText = async (text) => {
+                if (navigator.clipboard && window.isSecureContext) {
+                    await navigator.clipboard.writeText(text);
+                    return;
+                }
+
+                const input = document.createElement('input');
+                input.value = text;
+                input.setAttribute('readonly', '');
+                input.style.position = 'fixed';
+                input.style.opacity = '0';
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                input.remove();
+            };
+
+            const enhancePostCards = () => {
+                const postCards = Array.from(document.querySelectorAll('main .max-w-6xl.w-full > div'))
+                    .filter(card =>
+                        card.classList.contains('border') &&
+                        card.classList.contains('rounded-lg') &&
+                        card.classList.contains('bg-white') &&
+                        card.querySelector('.text-md.font-bold') &&
+                        card.querySelector('.text-lg.font-semibold')
+                    );
+
+                postCards.forEach((card, index) => {
+                    const postId = card.id || `post-${index + 1}`;
+                    const title = card.querySelector('.text-lg.font-semibold')?.textContent.trim() || `Post ${index + 1}`;
+                    const pageUrl = `${window.location.origin}${window.location.pathname}#${postId}`;
+                    const encodedUrl = encodeURIComponent(pageUrl);
+                    const likeKey = `liked-${postId}`;
+
+                    card.id = postId;
+                    card.classList.add('relative', 'pr-24');
+
+                    const actions = document.createElement('div');
+                    actions.className = 'post-actions';
+                    actions.innerHTML = `
+                        <button type="button" class="post-action-btn post-like-btn" aria-label="Like ${title}" title="Like">
+                            <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                                <path class="heart-fill" fill="currentColor" stroke="currentColor" d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path>
+                                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78Z"></path>
+                            </svg>
+                        </button>
+                        <div class="relative">
+                            <button type="button" class="post-action-btn post-share-btn" aria-label="Share ${title}" title="Share">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="18" cy="5" r="3"></circle>
+                                    <circle cx="6" cy="12" r="3"></circle>
+                                    <circle cx="18" cy="19" r="3"></circle>
+                                    <path d="m8.59 13.51 6.83 3.98"></path>
+                                    <path d="m15.41 6.51-6.82 3.98"></path>
+                                </svg>
+                            </button>
+                            <div class="post-share-menu hidden" role="menu">
+                                <button type="button" class="post-copy-link" role="menuitem">Copy link</button>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=${encodedUrl}" target="_blank" rel="noopener" role="menuitem">Share to LinkedIn</a>
+                            </div>
+                        </div>
+                    `;
+
+                    const likeBtn = actions.querySelector('.post-like-btn');
+                    const shareBtn = actions.querySelector('.post-share-btn');
+                    const shareMenu = actions.querySelector('.post-share-menu');
+                    const copyBtn = actions.querySelector('.post-copy-link');
+
+                    if (localStorage.getItem(likeKey) === 'true') {
+                        likeBtn.classList.add('is-liked');
+                        likeBtn.setAttribute('aria-pressed', 'true');
+                    } else {
+                        likeBtn.setAttribute('aria-pressed', 'false');
+                    }
+
+                    likeBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        const isLiked = likeBtn.classList.toggle('is-liked');
+                        likeBtn.setAttribute('aria-pressed', String(isLiked));
+                        localStorage.setItem(likeKey, String(isLiked));
+                    });
+
+                    shareBtn.addEventListener('click', (e) => {
+                        e.stopPropagation();
+                        document.querySelectorAll('.post-share-menu').forEach(menu => {
+                            if (menu !== shareMenu) menu.classList.add('hidden');
+                        });
+                        shareMenu.classList.toggle('hidden');
+                    });
+
+                    copyBtn.addEventListener('click', async (e) => {
+                        e.stopPropagation();
+                        await copyText(pageUrl);
+                        copyBtn.textContent = 'Link copied';
+                        setTimeout(() => {
+                            copyBtn.textContent = 'Copy link';
+                            shareMenu.classList.add('hidden');
+                        }, 1100);
+                    });
+
+                    card.appendChild(actions);
+                });
+            };
+
+            enhancePostCards();
+
             const updateCarousel = () => {
                 if (currentImages.length > 0) {
                     carouselImage.src = currentImages[currentIndex].src;
@@ -1646,6 +1828,12 @@
             }
 
             document.addEventListener('click', (e) => {
+                document.querySelectorAll('.post-share-menu').forEach(menu => {
+                    if (!menu.contains(e.target) && !menu.previousElementSibling?.contains(e.target)) {
+                        menu.classList.add('hidden');
+                    }
+                });
+
                 if (!dropdownMenu.classList.contains('hidden') && !dropdownMenu.contains(e.target) && e.target !== dropdownBtn) {
                     closeMenu(dropdownMenu);
                 }
