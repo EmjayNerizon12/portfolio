@@ -29,13 +29,13 @@
         }
 
         .post-actions {
-            position: absolute;
-            top: 0.75rem;
-            right: 0.75rem;
+            position: relative;
             z-index: 10;
             display: flex;
             align-items: center;
+            flex-shrink: 0;
             gap: 0.35rem;
+            margin-left: auto;
         }
 
         .post-action-btn {
@@ -288,7 +288,7 @@
 
                 <!-- Profile Indicator -->
                 <div class="flex items-center gap-2 ml-1 md:ml-3 pl-3 md:pl-4 border-l border-white/20">
-                    <div class="w-8 h-8 rounded-full overflow-hidden border-2 border-white/80 shadow-sm bg-white">
+                    <div class="w-8 h-8 rounded-full overflow-hidden border border-white/80 shadow-sm bg-white">
                         <img src="./profile.JPG" alt="profile" class="w-full h-full object-cover">
                     </div>
                     <span class="text-sm font-medium hidden md:block tracking-wide">Em-jay A. Nerizon</span>
@@ -305,7 +305,7 @@
             <div class="border border-gray-300 rounded-lg bg-white shadow-sm mb-4">
 
                 <div class="relative">
-                    <img src="./images/header.jpg" alt="header" class="w-full h-48 object-cover rounded-t-lg">
+                    <img src="./images/header.jpg" alt="header" class="w-full h-48 object-cover object-center rounded-t-lg">
 
                     <div class="flex flex-wrap md:flex-row flex-col md:items-start items-center">
                         <div class="flex md:flex-row flex-col md:items-start items-center gap-4 px-6 md:-mt-10 -mt-20">
@@ -1616,6 +1616,7 @@
                     );
 
                 postCards.forEach((card, index) => {
+                    const postHeader = card.firstElementChild;
                     const postId = card.id || `post-${index + 1}`;
                     const title = card.querySelector('.text-lg.font-semibold')?.textContent.trim() || `Post ${index + 1}`;
                     const pageUrl = `${window.location.origin}${window.location.pathname}#${postId}`;
@@ -1623,7 +1624,6 @@
                     const likeKey = `liked-${postId}`;
 
                     card.id = postId;
-                    card.classList.add('relative', 'pr-24');
 
                     const actions = document.createElement('div');
                     actions.className = 'post-actions';
@@ -1688,7 +1688,7 @@
                         }, 1100);
                     });
 
-                    card.appendChild(actions);
+                    postHeader.appendChild(actions);
                 });
             };
 
