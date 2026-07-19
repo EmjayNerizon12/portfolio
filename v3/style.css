@@ -27,18 +27,22 @@
     --radius: 12px;
     --font: 'Outfit', Georgia, serif;
     --font-display: 'Outfit', Georgia, serif;
-    --neo-shadow: 8px 8px 0px var(--card-border);
 }
 
 body.dark {
     --bg: #141414;
-    --bg-grid: #1c1c1c;
+    --bg-grid: #2a2a2a;
     --card-bg: #1e1e1e;
     --card-border: #3a3a3a;
     --text: #f0f0f0;
-    --text-muted: #888;
-    --nav-bg: #181818;
-    --nav-border: #2e2e2e;
+    --text-muted: #999999;
+    --orange: #ff6b2b;
+    --orange-light: #2d1b14;
+    --teal: #2db391;
+    --teal-light: #162b25;
+    --nav-bg: #1a1a1a;
+    --nav-border: #333333;
+    --connector: #3a3a3a;
     --shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
 }
 
@@ -172,7 +176,6 @@ body {
     border: 2px solid var(--card-border);
     border-radius: 0;
     padding: 40px 40px 36px;
-    box-shadow: var(--neo-shadow);
 }
 
 /* top-left label */
@@ -317,20 +320,17 @@ body.dark .hero-card {
     justify-content: center;
     border: 2px solid var(--card-border);
     border-radius: 0;
-    box-shadow: 4px 4px 0px var(--card-border);
     font-family: var(--font-display);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     padding: 14px 28px;
-    transition: transform 0.1s, box-shadow 0.1s;
     text-decoration: none;
     cursor: pointer;
 }
 
 .neo-btn:active {
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px var(--card-border);
 }
 
 .btn-primary.neo-btn {
@@ -393,15 +393,12 @@ body.dark .btn-outline.neo-btn {
     font-weight: 700;
     padding: 8px 16px;
     font-size: 0.9rem;
-    box-shadow: 3px 3px 0px var(--card-border);
     text-transform: uppercase;
-    transition: transform 0.15s, box-shadow 0.15s;
     cursor: default;
 }
 
 .tech-tag:hover {
     transform: translate(2px, 2px);
-    box-shadow: 1px 1px 0px var(--card-border);
 }
 
 
@@ -488,7 +485,6 @@ body.dark .btn-outline.neo-btn {
     border-radius: 50%;
     background: var(--orange);
     border: 2px solid var(--card-bg);
-    box-shadow: 0 0 0 2px var(--orange);
 }
 
 .timeline-meta {
@@ -575,7 +571,7 @@ body.dark .btn-outline.neo-btn {
    INTERNSHIP CAROUSEL
    ============================================================ */
 .intern-carousel {
-    border: 2px solid var(--text);
+    border: 2px solid var(--card-border);
     background: var(--card-bg);
 }
 
@@ -609,7 +605,7 @@ body.dark .btn-outline.neo-btn {
 
 /* Console bar */
 .intern-console {
-    border-top: 2px solid var(--text);
+    border-top: 2px solid var(--card-border);
     background: var(--bg-grid);
     padding: 10px 14px;
     display: flex;
@@ -635,27 +631,31 @@ body.dark .btn-outline.neo-btn {
 }
 
 .intern-btn {
-    width: 32px;
-    height: 32px;
-    border: 2px solid var(--text);
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--card-border);
     background: var(--card-bg);
     color: var(--text);
-    font-size: 1.4rem;
+    font-size: 1.2rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 2px 2px 0px var(--text);
-    transition: transform 0.1s, box-shadow 0.1s;
     border-radius: 0;
     line-height: 1;
     padding: 0;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.intern-btn:hover {
+    background: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
 }
 
 .intern-btn:active {
     transform: translate(2px, 2px);
-    box-shadow: 0px 0px 0px var(--text);
 }
 
 .intern-dots {
@@ -667,7 +667,7 @@ body.dark .btn-outline.neo-btn {
 .intern-dot {
     width: 8px;
     height: 8px;
-    border: 1.5px solid var(--text);
+    border: 1.5px solid var(--card-border);
     background: transparent;
     border-radius: 0;
     transition: background 0.2s;
@@ -701,29 +701,31 @@ body.dark .btn-outline.neo-btn {
 }
 
 .page-nav-btn {
-    width: 32px;
-    height: 32px;
-    border: 1.5px solid var(--text);
-    background: var(--orange-light);
-    color: var(--orange);
-    font-weight: bold;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: all 0.2s;
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--card-border);
+    background: var(--card-bg);
+    color: var(--text);
     font-size: 1.2rem;
+    font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    border-radius: 0;
+    line-height: 1;
     padding: 0;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
 }
 
 .page-nav-btn:hover {
     background: var(--orange);
     color: #fff;
+    border-color: var(--orange);
 }
 
-body.dark .page-nav-btn {
-    background: rgba(201, 74, 12, 0.12);
+.page-nav-btn:active {
+    transform: translate(2px, 2px);
 }
 
 .page-nav-counter {
@@ -761,7 +763,7 @@ body.dark .page-nav-btn {
 }
 
 .project-card-inner {
-    border: 2px solid var(--text);
+    border: 2px solid var(--card-border);
     border-radius: 0;
     padding: 0;
     height: 100%;
@@ -771,7 +773,7 @@ body.dark .page-nav-btn {
 }
 
 body.dark .project-card-inner {
-    border-color: var(--text);
+    border-color: var(--card-border);
 }
 
 /* Project-level carousel (inside each card) */
@@ -808,8 +810,8 @@ body.dark .project-card-inner {
 }
 
 .proj-console {
-    border-top: 2px solid var(--text);
-    border-bottom: 2px solid var(--text);
+    border-top: 2px solid var(--card-border);
+    border-bottom: 2px solid var(--card-border);
     background: var(--bg-grid);
     padding: 6px 10px;
     display: flex;
@@ -833,27 +835,31 @@ body.dark .project-card-inner {
 }
 
 .proj-btn {
-    width: 24px;
-    height: 24px;
-    border: 1.5px solid var(--text);
+    width: 28px;
+    height: 28px;
+    border: 2px solid var(--card-border);
     background: var(--card-bg);
     color: var(--text);
-    font-size: 1.1rem;
+    font-size: 1.2rem;
     font-weight: 700;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    box-shadow: 2px 2px 0px var(--text);
-    transition: transform 0.1s, box-shadow 0.1s;
     border-radius: 0;
     line-height: 1;
     padding: 0;
+    transition: background 0.2s, color 0.2s, border-color 0.2s, transform 0.1s;
+}
+
+.proj-btn:hover {
+    background: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
 }
 
 .proj-btn:active {
     transform: translate(2px, 2px);
-    box-shadow: 0px 0px 0px var(--text);
 }
 
 .proj-dots {
@@ -865,7 +871,7 @@ body.dark .project-card-inner {
 .proj-dot {
     width: 6px;
     height: 6px;
-    border: 1.5px solid var(--text);
+    border: 1.5px solid var(--card-border);
     background: transparent;
     border-radius: 0;
     cursor: pointer;
@@ -898,9 +904,9 @@ body.dark .project-card-inner {
     letter-spacing: 0.06em;
     padding: 4px 10px;
     border-radius: 0;
-    border: 1.5px solid var(--text);
+    border: 1.5px solid var(--card-border);
     text-transform: uppercase;
-    color: var(--text);
+    color: #1a1a1a;
     transition: transform 0.15s;
     cursor: default;
 }
@@ -976,17 +982,14 @@ body.dark .project-card-inner {
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    border: 2px solid var(--text);
+    border: 2px solid var(--card-border);
     border-radius: 0;
     background: var(--card-bg);
-    box-shadow: 4px 4px 0px var(--text);
-    transition: transform 0.15s, box-shadow 0.15s;
     cursor: default;
 }
 
 .skill-badge:hover {
     transform: translate(2px, 2px);
-    box-shadow: 2px 2px 0px var(--text);
 }
 
 .skill-badge img {
@@ -1009,7 +1012,7 @@ body.dark .project-card-inner {
 .contact-box {
     display: flex;
     align-items: center;
-    border: 2px solid var(--text);
+    border: 2px solid var(--card-border);
     padding: 12px;
     margin-bottom: 16px;
     background: var(--card-bg);
@@ -1018,8 +1021,8 @@ body.dark .project-card-inner {
 
 .contact-badge {
     background: var(--card-bg);
-    color: var(--text);
-    border: 2px solid var(--text);
+    color: #1a1a1a;
+    border: 2px solid var(--card-border);
     font-family: var(--font-display);
     font-size: 0.75rem;
     font-weight: 800;
@@ -1140,7 +1143,8 @@ body.dark .project-card-inner {
     }
 
     .intern-btn,
-    .proj-btn {
+    .proj-btn,
+    .page-nav-btn {
         width: 26px;
         height: 26px;
         font-size: 1rem;
