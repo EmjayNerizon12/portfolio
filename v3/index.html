@@ -246,8 +246,18 @@
         <section class="card" id="projects">
             <span class="card-label label-orange">DOMAINS</span>
 
-            <h2 class="section-title" style="margin-bottom: 1.5rem;">Projects</h2>
+            <div class="projects-header">
+                <h2 class="section-title">Projects</h2>
+                <div class="projects-page-nav">
+                    <button class="page-nav-btn" id="projPagePrev">&#8249;</button>
+                    <span class="page-nav-counter" id="projPageCounter">1 / 3</span>
+                    <button class="page-nav-btn" id="projPageNext">&#8250;</button>
+                </div>
+            </div>
 
+            <div class="projects-viewport" id="projectsViewport">
+            <div class="projects-pages" id="projectsPages">
+            <div class="projects-page active-page">
             <div class="projects-grid">
 
                 <!-- PROJECT 1: HRIS -->
@@ -316,6 +326,13 @@
                     </div>
                 </div>
 
+                </div><!-- /projects-grid page 1 -->
+                </div><!-- /projects-page 1 -->
+
+                <!-- PAGE 2 -->
+                <div class="projects-page">
+                <div class="projects-grid">
+
                 <!-- PROJECT 3: DCP -->
                 <div class="project-card">
                     <div class="project-card-inner">
@@ -383,6 +400,13 @@
                     </div>
                 </div>
 
+                </div><!-- /projects-grid page 2 -->
+                </div><!-- /projects-page 2 -->
+
+                <!-- PAGE 3 -->
+                <div class="projects-page">
+                <div class="projects-grid">
+
                 <!-- PROJECT 5: Django -->
                 <div class="project-card">
                     <div class="project-card-inner">
@@ -449,7 +473,12 @@
                     </div>
                 </div>
 
-            </div>
+                </div><!-- /projects-grid page 3 -->
+                </div><!-- /projects-page 3 -->
+
+                </div><!-- /projects-pages -->
+                </div><!-- /projects-viewport -->
+
         </section>
 
         <!-- CONNECTOR -->
@@ -632,6 +661,41 @@
             prevBtn.addEventListener('click', function () { goTo(current - 1); });
             nextBtn.addEventListener('click', function () { goTo(current + 1); });
         });
+
+        // Projects Page Navigation
+        (function() {
+            const pagesContainer = document.getElementById('projectsPages');
+            const pages = document.querySelectorAll('.projects-page');
+            const prevBtn = document.getElementById('projPagePrev');
+            const nextBtn = document.getElementById('projPageNext');
+            const counter = document.getElementById('projPageCounter');
+            
+            if (!pagesContainer || pages.length === 0) return;
+            
+            let currentPage = 0;
+            const totalPages = pages.length;
+            
+            function updatePage() {
+                pagesContainer.style.transform = `translateX(-${currentPage * 100}%)`;
+                if(counter) {
+                    counter.textContent = `${currentPage + 1} / ${totalPages}`;
+                }
+            }
+            
+            if(prevBtn) {
+                prevBtn.addEventListener('click', () => {
+                    currentPage = (currentPage - 1 + totalPages) % totalPages;
+                    updatePage();
+                });
+            }
+            
+            if(nextBtn) {
+                nextBtn.addEventListener('click', () => {
+                    currentPage = (currentPage + 1) % totalPages;
+                    updatePage();
+                });
+            }
+        })();
     </script>
 </body>
 
