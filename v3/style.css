@@ -555,6 +555,120 @@ body.dark .btn-outline.neo-btn {
 }
 
 /* ============================================================
+   INTERNSHIP CAROUSEL
+   ============================================================ */
+.intern-carousel {
+    border: 2px solid var(--text);
+    box-shadow: 6px 6px 0px var(--text);
+    background: var(--card-bg);
+}
+
+.intern-carousel-track {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #000;
+}
+
+.intern-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+    pointer-events: none;
+}
+
+.intern-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.intern-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Console bar */
+.intern-console {
+    border-top: 2px solid var(--text);
+    background: var(--bg-grid);
+    padding: 10px 14px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.intern-counter {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+    min-width: 48px;
+}
+
+.intern-chevrons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.intern-btn {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--text);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 1.4rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--text);
+    transition: transform 0.1s, box-shadow 0.1s;
+    border-radius: 0;
+    line-height: 1;
+    padding: 0;
+}
+
+.intern-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--text);
+}
+
+.intern-dots {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.intern-dot {
+    width: 8px;
+    height: 8px;
+    border: 1.5px solid var(--text);
+    background: transparent;
+    border-radius: 0;
+    transition: background 0.2s;
+}
+
+.intern-dot.active {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.intern-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* ============================================================
    PROJECTS
    ============================================================ */
 .projects-header {
@@ -596,10 +710,8 @@ body.dark .carousel-btn {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    overflow-x: auto;
-    padding-bottom: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
 }
 
 .project-card {
@@ -610,40 +722,127 @@ body.dark .carousel-btn {
 .project-card-inner {
     border: 2px solid var(--text);
     border-radius: 0;
-    padding: 16px;
+    padding: 0;
     height: 100%;
     background: var(--card-bg);
     display: flex;
     flex-direction: column;
+    box-shadow: 4px 4px 0px var(--text);
 }
 
 body.dark .project-card-inner {
     border-color: var(--text);
 }
 
-.project-img-wrap {
+/* Project-level carousel (inside each card) */
+.proj-carousel {
     width: 100%;
-    aspect-ratio: 16/9;
-    border-radius: 0;
-    overflow: hidden;
-    margin-bottom: 16px;
-    background: var(--bg-grid);
-    border: 2px solid var(--text);
-    box-shadow: 4px 4px 0px var(--text);
 }
 
-.project-img-wrap img {
+.proj-track {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #000;
+}
+
+.proj-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.proj-slide.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.proj-slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     display: block;
 }
 
-.project-info {
+.proj-console {
+    border-top: 2px solid var(--text);
+    border-bottom: 2px solid var(--text);
+    background: var(--bg-grid);
+    padding: 6px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+}
+
+.proj-counter {
+    font-family: var(--font-display);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    color: var(--text-muted);
+}
+
+.proj-chevrons {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.proj-btn {
+    width: 24px;
+    height: 24px;
+    border: 1.5px solid var(--text);
+    background: var(--card-bg);
+    color: var(--text);
+    font-size: 1.1rem;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 2px 2px 0px var(--text);
+    transition: transform 0.1s, box-shadow 0.1s;
+    border-radius: 0;
+    line-height: 1;
     padding: 0;
+}
+
+.proj-btn:active {
+    transform: translate(2px, 2px);
+    box-shadow: 0px 0px 0px var(--text);
+}
+
+.proj-dots {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+}
+
+.proj-dot {
+    width: 6px;
+    height: 6px;
+    border: 1.5px solid var(--text);
+    background: transparent;
+    border-radius: 0;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.proj-dot.active {
+    background: var(--orange);
+    border-color: var(--orange);
+}
+
+.project-info {
+    padding: 12px 14px 14px;
     flex: 1;
     display: flex;
     flex-direction: column;
+}
 }
 
 .project-tags {
@@ -850,9 +1049,16 @@ body.dark .project-card-inner {
 
 @media (max-width: 600px) {
     .page { padding: 72px 14px 32px; }
-    .card { padding: 28px 18px 24px; }
+    .card { padding: 24px 14px 20px; }
     .nav-links { display: none; }
-    .hero-stack { overflow-x: auto; }
-    .section-title { font-size: 1.4rem; }
-    .form-row { grid-template-columns: 1fr; }
+    .section-title { font-size: 1.3rem; }
+    .neo-btn { padding: 10px 18px; font-size: 0.8rem; }
+    .hero-actions { gap: 10px; }
+    .intern-btn, .proj-btn { width: 26px; height: 26px; font-size: 1rem; }
+    .proj-console { padding: 5px 8px; }
+    .intern-console { padding: 8px 10px; }
+    .contact-box { padding: 10px; }
+    .contact-badge { padding: 4px 8px; font-size: 0.68rem; }
+    .contact-text { font-size: 0.78rem; }
+    .tag { padding: 3px 7px; font-size: 0.62rem; }
 }
