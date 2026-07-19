@@ -384,6 +384,13 @@ body.dark .btn-outline.neo-btn {
     font-size: 0.9rem;
     box-shadow: 3px 3px 0px var(--card-border);
     text-transform: uppercase;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: default;
+}
+
+.tech-tag:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 1px 1px 0px var(--card-border);
 }
 
 
@@ -657,6 +664,13 @@ body.dark .project-card-inner {
     box-shadow: 2px 2px 0px var(--text);
     text-transform: uppercase;
     color: var(--text);
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: default;
+}
+
+.tag:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px var(--text);
 }
 
 .tag-red    { background: #ffc2c2; }
@@ -762,6 +776,13 @@ body.dark .project-card-inner {
     letter-spacing: 0.05em;
     margin-right: 16px;
     border-radius: 0;
+    transition: transform 0.15s, box-shadow 0.15s;
+    cursor: default;
+}
+
+.contact-badge:hover {
+    transform: translate(1px, 1px);
+    box-shadow: 1px 1px 0px var(--text);
 }
 
 .badge-email { background: #ffc2c2; }
