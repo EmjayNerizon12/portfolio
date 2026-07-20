@@ -652,24 +652,28 @@ body.dark .tag { color: #1a1a1a; } /* Keep tags readable if they have light back
     min-height: 280px;
 }
 
-/* LEFT WOOD PANEL — rough bark look */
+/* LEFT WOOD PANEL — rough bark look with stacked plank spacing */
 .contact-wood-panel {
     position: relative;
     background-color: #8b5e3c;
     background-image:
+        /* Horizontal plank gap lines — gives the "stack of wood" feel */
+        repeating-linear-gradient(
+            to bottom,
+            transparent,
+            transparent 54px,
+            rgba(0,0,0,0.35) 54px,
+            rgba(0,0,0,0.35) 58px,
+            rgba(255,255,255,0.07) 58px,
+            rgba(255,255,255,0.07) 60px
+        ),
+        /* Vertical grain lines within each plank */
         repeating-linear-gradient(
             90deg,
             transparent,
-            transparent 18px,
-            rgba(0,0,0,0.07) 18px,
-            rgba(0,0,0,0.07) 20px
-        ),
-        repeating-linear-gradient(
-            170deg,
-            transparent,
-            transparent 60px,
-            rgba(255,255,255,0.04) 60px,
-            rgba(255,255,255,0.04) 62px
+            transparent 22px,
+            rgba(0,0,0,0.06) 22px,
+            rgba(0,0,0,0.06) 24px
         );
     padding: 40px 32px;
     display: flex;
@@ -715,6 +719,48 @@ body.dark .tag { color: #1a1a1a; } /* Keep tags readable if they have light back
     flex-direction: column;
     justify-content: center;
     gap: 4px;
+}
+
+/* ---- CONTACT MOBILE RESPONSIVE ---- */
+@media (max-width: 640px) {
+    .contact-split {
+        grid-template-columns: 1fr;
+    }
+
+    /* On mobile: wood panel on top, jagged bottom edge */
+    .contact-wood-panel {
+        clip-path: polygon(
+            0 0, 100% 0, 100% 88%,
+            97% 92%, 100% 96%,
+            95% 100%, 0 100%
+        );
+        padding: 32px 24px;
+        min-height: 160px;
+        border-right: none;
+    }
+
+    .contact-wood-title {
+        font-size: 2rem;
+    }
+
+    .contact-white-panel {
+        padding: 28px 24px;
+    }
+
+    .contact-box {
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 12px;
+    }
+
+    .contact-badge {
+        margin-right: 0;
+    }
+
+    .contact-text {
+        font-size: 0.85rem;
+        word-break: break-all;
+    }
 }
 
 .contact-box {
