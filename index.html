@@ -4,109 +4,154 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Em-jay A. Nerizon — Portfolio</title>
+    <meta name="description" content="Em-jay A. Nerizon — Full-Stack Web Developer Portfolio. Built with a console-game, neo-brutalist aesthetic.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
         :root {
-            --bg: #f0ede4;
-            --bg-grid: #e8e4d8;
+            --bg: #f5f0e8;
             --card-bg: #ffffff;
-            --card-border: #2a2a2a;
+            --card-border: #1a1a1a;
             --text: #1a1a1a;
             --text-muted: #6b6b6b;
-            --orange: #c94a0c;
-            --teal: #1a5c4a;
-            --font: 'Outfit', Georgia, serif;
+            --yellow: #f5c518;
+            --yellow-light: #fff8d6;
+            --green: #2d6a4f;
+            --green-light: #52b788;
+            --font: 'Montserrat', sans-serif;
+            --shadow: 5px 5px 0 var(--card-border);
         }
 
         body {
             font-family: var(--font);
             background-color: var(--bg);
-            background-image:
-                linear-gradient(var(--bg-grid) 1px, transparent 1px),
-                linear-gradient(90deg, var(--bg-grid) 1px, transparent 1px);
-            background-size: 28px 28px;
             color: var(--text);
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
+            padding: 32px 16px;
         }
 
+        /* ---- ROPE (same as v3 between cards) ---- */
+        .rope-row {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 420px;
+            height: 40px;
+            padding: 0 56px;
+        }
+        .rope {
+            width: 16px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                -45deg,
+                #d4a373 0,
+                #d4a373 10px,
+                var(--card-border) 10px,
+                var(--card-border) 13px
+            );
+            border-left: 2px solid var(--card-border);
+            border-right: 2px solid var(--card-border);
+            border-radius: 6px;
+        }
+
+        /* ---- CARD ---- */
         .card {
             background: var(--card-bg);
             border: 2px solid var(--card-border);
-            padding: 48px 56px;
-            max-width: 520px;
-            width: 90%;
+            border-radius: 16px;
+            padding: 48px 48px 40px;
+            max-width: 420px;
+            width: 100%;
             position: relative;
             text-align: center;
+            box-shadow: var(--shadow);
         }
 
         .card-label {
             position: absolute;
-            top: -1px;
-            left: -1px;
+            top: -14px;
+            left: 24px;
             font-family: var(--font);
             font-size: 0.65rem;
             font-weight: 800;
             letter-spacing: 0.1em;
             text-transform: uppercase;
-            padding: 3px 10px;
+            padding: 4px 12px;
             border: 2px solid var(--card-border);
-            border-radius: 0;
+            border-radius: 4px;
+            background: var(--yellow);
+            color: var(--card-border);
         }
 
-        .label-orange { background: var(--orange); color: #fff; border-color: var(--orange); }
-
+        /* ---- LOGO ICON ---- */
         .logo-icon {
-            width: 60px;
-            height: 60px;
+            width: 64px;
+            height: 64px;
             background: var(--text);
-            color: var(--card-bg);
-            font-size: 1.8rem;
+            color: var(--yellow);
+            font-size: 1.9rem;
             font-weight: 900;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 24px;
+            margin: 0 auto 28px;
             border: 2px solid var(--card-border);
+            border-radius: 12px;
+            box-shadow: 3px 3px 0 var(--card-border);
         }
 
         h1 {
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-size: clamp(1.5rem, 5vw, 2rem);
             font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: -0.03em;
+            letter-spacing: -0.02em;
             line-height: 1.1;
             margin-bottom: 8px;
         }
 
         .subtitle {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             font-weight: 700;
-            color: var(--orange);
-            letter-spacing: 0.08em;
+            color: var(--green);
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            margin-bottom: 24px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+        .subtitle::before,
+        .subtitle::after {
+            content: '';
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--green);
         }
 
         .desc {
-            font-size: 0.9rem;
+            font-size: 0.88rem;
+            font-weight: 500;
             color: var(--text-muted);
-            line-height: 1.65;
-            margin-bottom: 36px;
+            line-height: 1.7;
+            margin-bottom: 32px;
         }
 
+        /* ---- BUTTON ---- */
         .btn {
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            background: var(--orange);
-            color: #fff;
+            background: var(--yellow);
+            color: var(--card-border);
             border: 2px solid var(--card-border);
+            border-radius: 8px;
             font-family: var(--font);
             font-weight: 800;
             font-size: 0.9rem;
@@ -115,65 +160,80 @@
             padding: 14px 32px;
             text-decoration: none;
             cursor: pointer;
-            transition: transform 0.15s, background 0.15s;
+            box-shadow: 4px 4px 0 var(--card-border);
+            transition: transform 0.15s, box-shadow 0.15s;
         }
-
         .btn:hover {
-            background: #a33a08;
-            transform: translate(2px, 2px);
+            transform: translate(-2px, -2px);
+            box-shadow: 6px 6px 0 var(--card-border);
         }
-
         .btn-arrow {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             transition: transform 0.2s;
         }
-
         .btn:hover .btn-arrow {
-            transform: translateX(4px);
+            transform: translateX(5px);
         }
 
+        /* ---- VERSION TAG ---- */
         .divider {
             width: 40px;
             height: 2px;
             background: var(--card-border);
-            margin: 28px auto 0;
+            margin: 28px auto 16px;
+            border-radius: 2px;
         }
-
         .version-tag {
-            margin-top: 16px;
-            font-size: 0.72rem;
+            font-size: 0.7rem;
             font-weight: 700;
             color: var(--text-muted);
-            letter-spacing: 0.1em;
+            letter-spacing: 0.12em;
             text-transform: uppercase;
         }
-
         .version-tag span {
-            color: var(--teal);
+            color: var(--green);
+            font-weight: 900;
+        }
+
+        /* ---- BOTTOM ROPE ---- */
+        .rope-row-bottom {
+            transform: scaleY(-1); /* flip so ropes look like they hang down */
         }
     </style>
 </head>
 <body>
 
+    <!-- TOP ROPES (hang down into the card) -->
+    <div class="rope-row">
+        <div class="rope"></div>
+        <div class="rope"></div>
+    </div>
+
     <div class="card">
-        <span class="card-label label-orange">Portfolio</span>
+        <span class="card-label">Portfolio</span>
 
         <div class="logo-icon">E</div>
 
         <h1>Em-jay A. Nerizon</h1>
-        <p class="subtitle">Web Developer &nbsp;·&nbsp; Full-Stack</p>
+        <p class="subtitle">Full-Stack Web Developer</p>
 
         <p class="desc">
-            Welcome! Click below to view the latest version of my portfolio — built with a neo-brutalist console UI aesthetic.
+            Welcome! Click below to view my portfolio — built with a console-game, neo-brutalist aesthetic using a yellow, green &amp; bark theme.
         </p>
 
-        <a href="v3/index.html" class="btn">
+        <a href="v3/index.html" class="btn" id="viewPortfolioBtn">
             View Portfolio
             <span class="btn-arrow">&#8250;</span>
         </a>
 
         <div class="divider"></div>
         <p class="version-tag">Version <span>v3</span> &mdash; 2026</p>
+    </div>
+
+    <!-- BOTTOM ROPES (hang down from the card) -->
+    <div class="rope-row rope-row-bottom">
+        <div class="rope"></div>
+        <div class="rope"></div>
     </div>
 
 </body>
