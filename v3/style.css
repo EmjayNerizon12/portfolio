@@ -598,9 +598,125 @@ body.dark .tag { color: #1a1a1a; } /* Keep tags readable if they have light back
     text-transform: uppercase; color: var(--text);
 }
 
+/* Internship role badges */
+.intern-role-badges {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0 14px;
+    flex-wrap: wrap;
+}
+.intern-role-badge {
+    display: inline-block;
+    background: var(--green);
+    color: #fff;
+    border: 2px solid var(--card-border);
+    border-radius: 6px;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 800;
+    padding: 6px 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+.intern-year-badge {
+    display: inline-block;
+    background: var(--yellow);
+    color: var(--card-border);
+    border: 2px solid var(--card-border);
+    border-radius: 6px;
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    font-weight: 900;
+    padding: 6px 14px;
+    letter-spacing: 0.04em;
+}
+
 /* ============================================================
    CONTACT LAYOUT
    ============================================================ */
+
+/* Remove old full-card wood background — now only applies to left panel */
+#contact {
+    background: transparent;
+    border: 3px solid var(--card-border);
+    box-shadow: 6px 6px 0 var(--card-border);
+    padding: 0;
+    overflow: hidden;
+}
+
+/* Split layout: wood left | white right */
+.contact-split {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    min-height: 280px;
+}
+
+/* LEFT WOOD PANEL — rough bark look */
+.contact-wood-panel {
+    position: relative;
+    background-color: #8b5e3c;
+    background-image:
+        repeating-linear-gradient(
+            90deg,
+            transparent,
+            transparent 18px,
+            rgba(0,0,0,0.07) 18px,
+            rgba(0,0,0,0.07) 20px
+        ),
+        repeating-linear-gradient(
+            170deg,
+            transparent,
+            transparent 60px,
+            rgba(255,255,255,0.04) 60px,
+            rgba(255,255,255,0.04) 62px
+        );
+    padding: 40px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Jagged / broken right edge */
+    clip-path: polygon(
+        0 0, 100% 0,
+        96% 8%, 100% 16%,
+        93% 24%, 100% 33%,
+        95% 42%, 100% 50%,
+        97% 58%, 100% 67%,
+        94% 75%, 100% 83%,
+        96% 92%, 100% 100%,
+        0 100%
+    );
+    border-right: none;
+}
+
+.contact-wood-title {
+    font-family: var(--font-display);
+    font-size: 2.6rem;
+    font-weight: 900;
+    line-height: 1.1;
+    color: var(--yellow);
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
+    margin-bottom: 16px;
+}
+
+.contact-wood-sub {
+    color: rgba(255,255,255,0.85);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* RIGHT WHITE PANEL */
+.contact-white-panel {
+    background: var(--card-bg);
+    padding: 40px 36px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 4px;
+}
+
 .contact-box {
     display: flex; align-items: center; border: 2px solid var(--card-border);
     border-radius: 8px; padding: 16px; margin-bottom: 16px; background: var(--card-bg);
