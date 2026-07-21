@@ -139,6 +139,56 @@ body {
 }
 
 /* ============================================================
+   CARD DECORATIONS
+   ============================================================ */
+.card-deco {
+    position: absolute;
+    z-index: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease;
+}
+
+.card:hover .card-deco {
+    transform: scale(1.05);
+}
+
+.deco-hero-bg {
+    bottom: 40px;
+    right: 40px;
+    height: 120px;
+    opacity: 1;
+}
+
+.deco-about-bg {
+    bottom: 40px;
+    left: 40px;
+    height: 100px;
+    opacity: 1;
+}
+
+.deco-intern-bg {
+    top: 40px;
+    right: 40px;
+    height: 100px;
+    opacity: 1;
+}
+
+.deco-projects-bg {
+    top: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 70px;
+    opacity: 1;
+}
+
+.deco-skills-bg {
+    bottom: 40px;
+    right: 40px;
+    height: 100px;
+    opacity: 1;
+}
+
+/* ============================================================
    CARD
    ============================================================ */
 .card {
@@ -372,9 +422,23 @@ body.dark .label-green { color: #fff; border-color: var(--card-border); }
 }
 
 .timeline-awards li {
-    font-size: 0.8rem; font-weight: 700; color: var(--text);
-    background: var(--green-light); border: 1.5px solid var(--card-border);
+    font-size: 0.8rem; font-weight: 800;
+    border: 2px solid var(--card-border);
     padding: 6px 12px; border-radius: 6px; display: inline-block; width: fit-content;
+    letter-spacing: 0.02em;
+}
+
+.timeline-awards li:nth-child(odd) {
+    background: var(--green);
+    color: #ffffff;
+}
+.timeline-awards li:nth-child(odd) span {
+    color: #ffffff;
+}
+
+.timeline-awards li:nth-child(even) {
+    background: var(--yellow);
+    color: var(--card-border);
 }
 
 /* Internship */
@@ -503,11 +567,6 @@ body.dark .internship-meta .text-yellow {
     border: 2px solid var(--card-border); border-radius: 12px;
     padding: 0; height: 100%; background: var(--card-bg);
     display: flex; flex-direction: column; overflow: hidden;
-    box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.project-card-inner:hover {
-    transform: translateY(-4px); box-shadow: var(--shadow);
 }
 
 /* Project-level carousel (inside each card) */
@@ -636,79 +695,64 @@ body.dark .tag { color: #1a1a1a; } /* Keep tags readable if they have light back
    CONTACT LAYOUT
    ============================================================ */
 
-/* Remove old full-card wood background — now only applies to left panel */
 #contact {
+    padding: 0;
     background: transparent;
     border: 3px solid var(--card-border);
+    border-radius: 16px;
     box-shadow: 6px 6px 0 var(--card-border);
-    padding: 0;
-    overflow: hidden;
 }
 
-/* Split layout: wood left | white right */
+/* Split layout */
 .contact-split {
     display: grid;
     grid-template-columns: 1fr 1.4fr;
     min-height: 280px;
+    border-radius: 13px;
+    overflow: hidden;
 }
 
-/* LEFT WOOD PANEL — rough bark look with stacked plank spacing */
-.contact-wood-panel {
-    position: relative;
-    background-color: #8b5e3c;
-    background-image:
-        /* Horizontal plank gap lines — gives the "stack of wood" feel */
-        repeating-linear-gradient(
-            to bottom,
-            transparent,
-            transparent 54px,
-            rgba(0,0,0,0.35) 54px,
-            rgba(0,0,0,0.35) 58px,
-            rgba(255,255,255,0.07) 58px,
-            rgba(255,255,255,0.07) 60px
-        ),
-        /* Vertical grain lines within each plank */
-        repeating-linear-gradient(
-            90deg,
-            transparent,
-            transparent 22px,
-            rgba(0,0,0,0.06) 22px,
-            rgba(0,0,0,0.06) 24px
-        );
-    padding: 40px 32px;
+/* LEFT SVG PANEL */
+.contact-svg-panel {
+    background-color: var(--yellow-light);
+    padding: 40px 32px 0 32px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    /* Jagged / broken right edge */
-    clip-path: polygon(
-        0 0, 100% 0,
-        96% 8%, 100% 16%,
-        93% 24%, 100% 33%,
-        95% 42%, 100% 50%,
-        97% 58%, 100% 67%,
-        94% 75%, 100% 83%,
-        96% 92%, 100% 100%,
-        0 100%
-    );
-    border-right: none;
+    justify-content: flex-start;
+    border-right: 3px solid var(--card-border);
+    overflow: hidden;
 }
 
-.contact-wood-title {
+.contact-large-svg {
+    align-self: flex-end;
+    height: 180px;
+    margin-top: auto;
+    margin-right: -16px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.contact-svg-title {
     font-family: var(--font-display);
-    font-size: 2.6rem;
+    font-size: 2.8rem;
     font-weight: 900;
     line-height: 1.1;
-    color: var(--yellow);
-    text-shadow: 3px 3px 0 rgba(0,0,0,0.5);
-    margin-bottom: 16px;
+    color: var(--text);
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 1;
 }
 
-.contact-wood-sub {
-    color: rgba(255,255,255,0.85);
+.contact-svg-sub {
+    color: var(--text-muted);
     font-family: var(--font-display);
-    font-size: 0.9rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 700;
     line-height: 1.6;
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
 }
 
 /* RIGHT WHITE PANEL */
@@ -719,6 +763,17 @@ body.dark .tag { color: #1a1a1a; } /* Keep tags readable if they have light back
     flex-direction: column;
     justify-content: center;
     gap: 4px;
+    position: relative;
+}
+
+.deco-contact-grass {
+    position: absolute;
+    bottom: 12px;
+    right: 16px;
+    height: 36px;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.8;
 }
 
 /* ---- CONTACT MOBILE RESPONSIVE ---- */
@@ -727,20 +782,16 @@ body.dark .tag { color: #1a1a1a; } /* Keep tags readable if they have light back
         grid-template-columns: 1fr;
     }
 
-    /* On mobile: wood panel on top, jagged bottom edge */
-    .contact-wood-panel {
-        clip-path: polygon(
-            0 0, 100% 0, 100% 88%,
-            97% 92%, 100% 96%,
-            95% 100%, 0 100%
-        );
-        padding: 32px 24px;
-        min-height: 160px;
+    /* On mobile: full width panel */
+    .contact-svg-panel {
+        padding: 32px 24px 0 24px;
+        min-height: 180px;
         border-right: none;
+        border-bottom: 3px solid var(--card-border);
     }
 
-    .contact-wood-title {
-        font-size: 2rem;
+    .contact-svg-title {
+        font-size: 2.2rem;
     }
 
     .contact-white-panel {
@@ -759,7 +810,7 @@ body.dark .tag { color: #1a1a1a; } /* Keep tags readable if they have light back
 
     .contact-text {
         font-size: 0.85rem;
-        word-break: break-all;
+        overflow-wrap: anywhere;
     }
 }
 
@@ -767,12 +818,15 @@ body.dark .tag { color: #1a1a1a; } /* Keep tags readable if they have light back
     display: flex; align-items: center; border: 2px solid var(--card-border);
     border-radius: 8px; padding: 16px; margin-bottom: 16px; background: var(--card-bg);
     box-shadow: var(--shadow-sm); transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    z-index: 2;
 }
 .contact-box:hover {
     transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--card-border);
 }
 
 .contact-badge {
+    position: relative; z-index: 1;
     background: var(--yellow-light); color: var(--text); border: 2px solid var(--card-border);
     border-radius: 6px; font-family: var(--font-display); font-size: 0.75rem; font-weight: 800;
     padding: 6px 12px; letter-spacing: 0.05em; margin-right: 16px; transition: transform 0.15s;
@@ -785,7 +839,8 @@ body.dark .tag { color: #1a1a1a; } /* Keep tags readable if they have light back
 .badge-viber { background: #d299ff; margin-right: 8px; }
 
 .contact-text {
-    font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text); word-break: break-all;
+    position: relative; z-index: 1;
+    font-family: var(--font-display); font-size: 1rem; font-weight: 700; color: var(--text); overflow-wrap: anywhere;
 }
 
 .contact-visual {
@@ -825,4 +880,12 @@ body.dark .tag { color: #1a1a1a; } /* Keep tags readable if they have light back
     .contact-box { flex-direction: column; align-items: flex-start; gap: 12px; padding: 16px; }
     .contact-badge { margin-right: 0; }
     .contact-text { font-size: 0.9rem; }
+    
+    .deco-hero-bg { top: 20px; right: 20px; bottom: auto; height: 60px; }
+    .deco-about-bg { bottom: 20px; right: 20px; left: auto; height: 60px; }
+    .deco-intern-bg { top: 20px; right: 20px; height: 60px; }
+    .deco-projects-bg { display: none; }
+    .deco-skills-bg { bottom: 20px; right: 20px; top: auto; height: 60px; }
+    .contact-large-svg { height: 130px; opacity: 1; margin-right: -10px; margin-top: 16px; }
+
 }
