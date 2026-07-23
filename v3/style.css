@@ -329,6 +329,18 @@ body.dark .label-green {
     background: var(--yellow);
 }
 
+.nav-icon-wrap {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    border: 2px solid var(--card-border);
+    overflow: hidden;
+    flex-shrink: 0;
+    background: var(--yellow);
+    align-items: center;
+    justify-content: center;
+}
+
 .hero-clean-photo {
     width: 100%;
     height: 100%;
