@@ -136,8 +136,12 @@ body {
 
 .nav-links a.active {
     background: var(--yellow);
-    color: #000;
+    color: #143622;
     border: 2px solid var(--card-border);
+}
+
+body.dark .nav-links a.active {
+    color: #000000;
 }
 
 .nav-theme-btn {
