@@ -136,7 +136,7 @@ body {
 
 .nav-links a.active {
     background: var(--yellow);
-    color: var(--text);
+    color: #000;
     border: 2px solid var(--card-border);
 }
 
